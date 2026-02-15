@@ -1,0 +1,7 @@
+# Prompt from: Historical Roots of Gendered Emotional Stereotypes
+
+Conversation ID: conv_35
+
+---
+
+Can we create an app prompt for this? I need a docx with all this info to revisit if i want to scale?

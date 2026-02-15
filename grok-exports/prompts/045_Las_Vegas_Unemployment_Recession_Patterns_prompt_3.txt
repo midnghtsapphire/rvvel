@@ -1,0 +1,7 @@
+# Prompt from: Las Vegas Unemployment Recession Patterns
+
+Conversation ID: conv_45
+
+---
+
+Please add all this to paper. Based on vegas historical data when would nbrs announce recession? And actual economic date stats starting?Can you put this in .pdf and google doc using ssrn file naming conventions?

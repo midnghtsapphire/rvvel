@@ -1,0 +1,7 @@
+# Prompt from: Trump's Social Security Policy Impact
+
+Conversation ID: conv_36
+
+---
+
+And I am riding a whole system for capture lock that probably isn't practical but it's only if somebody just took some of the ideas or used it to create their own ideasThe provided sources explore the systemic risks of AI-enabled authoritarianism and the "capture" of democratic institutions by powerful tech oligarchs. To counter these threats, the texts propose a Constellation Architecture, which replaces singular AI models with a distributed network of specialized, autonomous agents designed to provide mutual oversight. This framework aims to preserve human agency and truth through cryptographic anchoring, decentralized governance, and tiered trust verification. The materials also document how Big Tech lobbying and regulatory evasion currently undermine public safety and civil liberties. Ultimately, the collection serves as both a warning of a potential "Capture Lock" on society and a technical roadmap for building resilient, public AI infrastructure.

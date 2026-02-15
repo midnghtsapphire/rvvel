@@ -1,0 +1,8 @@
+# Prompt from: Historical Roots of Gendered Emotional Stereotypes
+
+Conversation ID: conv_35
+
+---
+
+I have supabase, firebase
+ I need cloud storage. I had oceansdigital.. whatever never used it. Used netifly which is what for? Deployment. I think that oceans one i didnt like how they compartimentalized it. I want the best scalable. Adhd loves netifly for ease. I need to think enterprise at some point.

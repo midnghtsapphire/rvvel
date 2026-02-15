@@ -1,0 +1,7 @@
+# Prompt from: DRD4 Gene: Infidelity and Promiscuity Link
+
+Conversation ID: conv_33
+
+---
+
+Id like to do an indepth ssrn white paper on this topic DRD4 (Dopamine Receptor Gene)**: This gene regulates dopamine, the neurotransmitter tied to pleasure, risk-taking, and novelty-seeking. A specific variant called 7R+ (or the "long allele") has been associated with higher rates of infidelity and promiscuity.<grok:render

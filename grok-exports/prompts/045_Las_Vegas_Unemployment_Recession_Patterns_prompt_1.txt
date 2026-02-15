@@ -1,0 +1,7 @@
+# Prompt from: Las Vegas Unemployment Recession Patterns
+
+Conversation ID: conv_45
+
+---
+
+Generate research as a multi agent with sub agents and an expert in home sales, recession, real estate, economist, national and global history and historical economy and overlapping categories as an AIS is there a pattern of when vegas sees unemployment and or a rise or lack of jobs then recession.

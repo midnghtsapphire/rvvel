@@ -1,0 +1,283 @@
+# Prompt from: Automated Ecommerce + Affiliate Site Factory
+
+Conversation ID: conv_14
+
+---
+
+Where do i put code files? And this one:// app.js - Node.js API for Dynamic Website Factory using OpenRouter
+// This is a Fastify server that implements the described orchestration.
+// Requires Node.js 18+, Fastify, and dotenv for environment variables.
+// Install dependencies: npm install fastify dotenv node-fetch
+// Set OPENROUTER_API_KEY in .env file
+// Run: node app.js
+// POST to http://localhost:3000/generate with JSON body: { niche: "your niche idea", brand: "optional", domain: "optional", vibe: "optional" }
+
+const fastify = require('fastify')({ logger: true });
+const fetch = require('node-fetch');
+require('dotenv').config();
+
+const OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1';
+const API_KEY = process.env.OPENROUTER_API_KEY;
+
+if (!API_KEY) {
+  throw new Error('OPENROUTER_API_KEY is required in .env');
+}
+
+// Provider reliability scores (fortified with more providers based on common knowledge)
+const providerReliability = {
+  'openai': 10,
+  'anthropic': 10,
+  'x-ai': 9,
+  'google': 9,
+  'mistral': 8,
+  'meta': 8,
+  'arcee-ai': 7,
+  'moonshotai': 7,
+  'upstage': 7,
+  'liquid': 7,
+  // Default will be 6 for unknown
+};
+
+// Roles with keywords for role_fit scoring
+const roles = [
+  {
+    name: 'ARCHITECT',
+    keywords: ['architecture', 'database', 'api', 'system', 'technical', 'reasoning', 'structure'],
+  },
+  {
+    name: 'SEO & CONTENT STRATEGIST',
+    keywords: ['seo', 'content', 'marketing', 'strategy', 'routes', 'schema', 'optimization'],
+  },
+  {
+    name: 'BRAND/GRAPHICS DESIGNER',
+    keywords: ['brand', 'design', 'graphics', 'creative', 'visual', 'svg', 'art', 'ui'],
+  },
+  {
+    name: 'SECURITY/QA ENGINEER',
+    keywords: ['security', 'qa', 'testing', 'engineering', 'pipelines', 'controls', 'audit'],
+  },
+  {
+    name: 'FULL-STACK IMPLEMENTER',
+    keywords: ['full-stack', 'implementation', 'code', 'development', 'file', 'docker', 'stack'],
+  },
+];
+
+// Default tech stack, scope, etc. (copied and fortified with clearer comments)
+const defaultStack = ` - Monorepo: pnpm workspaces
+- Frontend: Next.js App Router + TypeScript + Tailwind
+- Admin Dashboard: Next.js (separate app) + shared UI package
+- API: Node.js + TypeScript (Fastify preferred)
+- DB: Postgres + migrations (Drizzle preferred)
+- Auth: session-based auth + RBAC (admin/editor/analyst/support), plus customer role
+- Local dev: docker-compose (postgres + redis optional)
+- Jobs: optional BullMQ + Redis (feature-flagged)
+- Assets: SVG-first graphics + OpenGraph image rendering via Playwright (local)`;
+
+const scopeRequirements = ` [Paste the full SCOPE from the system prompt here, including A) B) C) D) E)] 
+// Note: To avoid length issues, assume it's a string with the full scope. Fortified by adding comments for clarity.`;
+
+// Hard constraints (fortified with validation in code)
+const hardConstraints = ` - Exactly 5 OpenRouter model calls. No more, no less.
+- No external paid APIs required for the generated website to run.
+- You may include optional integrations (Stripe, Shippo, etc.) ONLY as “optional adapters,” with a local/mock default path that works without them.
+- All testing/security/SEO/a11y/perf tooling must be open-source and runnable locally.
+- Output must be deterministic, structured, and immediately usable for code generation.`;
+
+// Role output formats (as strings)
+const roleOutputFormats = [
+  `CALL #1 ARCHITECT must output:
+A) Component Architecture (text diagram)
+B) Data Model (tables + key fields + indexes) including: [list]
+C) API Contract Outline (endpoints groups)
+D) Services/modules list
+E) Risks + mitigations`,
+
+  `CALL #2 SEO & CONTENT must output:
+A) Site Map routes including: [list]
+B) Content Plan: minimum [details]
+C) Schema plan: [details]
+D) Internal linking rules [details]
+E) On-page templates rules for: [details]`,
+
+  `CALL #3 BRAND/GRAPHICS must output:
+A) Design tokens (json-like): [details]
+B) 3–5 SVG logos (actual SVG markup)
+C) 3 hero background SVGs (actual SVG markup)
+D) Favicon SVG + render instructions
+E) OG image template spec (SVG->PNG via Playwright) + sample template markup
+F) Dashboard UI look (cards, tables, charts style)`,
+
+  `CALL #4 SECURITY/QA must output:
+A) Threat model summary (checkout, auth, admin)
+B) Security controls: [list]
+C) Open-source audit pipeline commands: [list]
+D) CI gating policy (fail build on thresholds)
+E) Acceptance tests list (checkout, orders, role permissions, redirects)`,
+
+  `CALL #5 IMPLEMENTER must output:
+A) Monorepo file tree (required paths)
+B) Key code stubs list + file paths
+C) Minimal real code for: [list]
+D) docker-compose (postgres + optional redis)
+E) env vars + run commands
+F) scripts: dev, build, test, e2e, lint, audit:perf, audit:a11y, audit:seo, audit:sec, audit:all`,
+];
+
+// Function to call OpenRouter chat completion
+async function callModel(modelId, systemPrompt, userPrompt) {
+  const response = await fetch(`${OPENROUTER_BASE_URL}/chat/completions`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: modelId,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt },
+      ],
+    }),
+  });
+  const data = await response.json();
+  return data.choices[0].message.content;
+}
+
+// Function to select models dynamically
+async function selectModels() {
+  const response = await fetch(`${OPENROUTER_BASE_URL}/models`, {
+    headers: {
+      'Authorization': `Bearer ${API_KEY}`,
+    },
+  });
+  const data = await response.json();
+  const models = data.data;
+
+  // Precompute max values
+  let maxContext = 0;
+  let maxPrice = 0;
+  models.forEach(m => {
+    maxContext = Math.max(maxContext, m.context_length || 0);
+    const promptPrice = parseFloat(m.pricing?.prompt || '0');
+    const completionPrice = parseFloat(m.pricing?.completion || '0');
+    maxPrice = Math.max(maxPrice, promptPrice + completionPrice);
+  });
+
+  const selected = [];
+  const usedModels = new Set();
+
+  for (const role of roles) {
+    const scores = models.map(m => {
+      const desc = (m.description || '').toLowerCase();
+      const roleFitCount = role.keywords.reduce((count, kw) => count + (desc.includes(kw.toLowerCase()) ? 1 : 0), 0);
+      const roleFit = (roleFitCount / role.keywords.length) * 10;
+
+      const reliability = providerReliability[m.provider] || 6;
+
+      const contextScore = m.context_length ? (m.context_length / maxContext) * 10 : 0;
+
+      const instruction = m.supported_parameters?.includes('tools') ? 10 : 5;
+
+      const promptPrice = parseFloat(m.pricing?.prompt || '0');
+      const completionPrice = parseFloat(m.pricing?.completion || '0');
+      const cost = maxPrice > 0 ? 10 - ((promptPrice + completionPrice) / maxPrice * 10) : 10;
+
+      const totalScore = roleFit * 0.4 + reliability * 0.25 + contextScore * 0.15 + instruction * 0.1 + cost * 0.1;
+
+      return { model: m.id, score: totalScore };
+    });
+
+    scores.sort((a, b) => b.score - a.score);
+
+    let chosen = scores.find(s => !usedModels.has(s.model)) || scores[0];
+    selected.push(chosen.model);
+    usedModels.add(chosen.model);
+  }
+
+  return selected;
+}
+
+// Function to infer subject classification (fortified with simple logic)
+function inferClassification(niche) {
+  niche = niche.toLowerCase();
+  const type = niche.includes('ecommerce') || niche.includes('shop') ? 'ecommerce' : niche.includes('affiliate') ? 'affiliate/info' : 'hybrid';
+  const compliance = niche.includes('health') || niche.includes('finance') || niche.includes('legal') ? 'high' : 'medium';
+  const security = compliance === 'high' ? 'high' : 'medium';
+  const design = 'high'; // Default
+  return { type, compliance, security, design };
+}
+
+// Function to consolidate responses (fortified with better parsing using regex)
+function consolidate(responses, userInput, classification) {
+  // Simple parsing: assume sections are marked as A) Title\ncontent\nB) ...
+  function extractSection(output, letter) {
+    const regex = new RegExp(`\( {letter}\\) [^\n]+\n([\\s\\S]*?)(?=[A-Z]\\)| \))`, 'i');
+    const match = output.match(regex);
+    return match ? match[1].trim() : 'Not available';
+  }
+
+  const [arch, seo, brand, sec, impl] = responses.map((out, i) => out); // responses in order
+
+  // MASTER_SPEC
+  let masterSpec = `# MASTER_SPEC (Manus)\n\n`;
+
+  masterSpec += `1) Assumptions & Defaults\nClassification: ${JSON.stringify(classification)}\nStack: ${defaultStack}\n\n`;
+
+  masterSpec += `2) Brand + Domain Plan\n${extractSection(brand, 'A')}\nDomain: ${userInput.domain || 'Generated domain'}\n\n`; // etc.
+
+  // Add other sections similarly, mapping from extracts
+  // For brevity, pseudo-code for rest
+  masterSpec += `3) Niche Positioning\nBased on ${userInput.niche}\n\n`;
+  masterSpec += `4) Site Map (routes)\n${extractSection(seo, 'A')}\n\n`;
+  // ... Continue for all 19 sections, extracting from appropriate responses
+
+  // IMPLEMENTATION_PLAN
+  let implPlan = `# IMPLEMENTATION_PLAN (Manus)\n\n`;
+
+  implPlan += `1) Monorepo file tree\n${extractSection(impl, 'A')}\n\n`;
+  // ... Add others
+
+  implPlan += `4) npm scripts list\nMandatory: dev, build, test, e2e, lint, audit:perf, audit:a11y, audit:seo, audit:sec, audit:all\n${extractSection(impl, 'F')}\n\n`;
+  // etc.
+
+  return { masterSpec, implPlan };
+}
+
+fastify.post('/generate', async (request, reply) => {
+  const { niche, brand, domain, vibe = 'modern, premium, glassmorphism, blunt/clear' } = request.body;
+
+  if (!niche) {
+    return reply.code(400).send({ error: 'niche is required' });
+  }
+
+  const userIdea = `${niche}\nBrand: ${brand || 'Generate'}\nDomain: ${domain || 'Generate'}\nVibe: ${vibe}`;
+
+  const classification = inferClassification(niche);
+
+  const selectedModels = await selectModels();
+
+  // Prepare prompts for each role
+  const calls = roles.map((role, i) => {
+    const system = `You are an ${role.name} for the website factory. Follow HARD CONSTRAINTS: \( {hardConstraints}\nOutput EXACTLY in this format:\n \){roleOutputFormats[i]}`;
+    const user = `User idea: ${userIdea}\nSubject classification: ${JSON.stringify(classification)}\nScope requirements: ${scopeRequirements}\nStack defaults: ${defaultStack}`;
+    return callModel(selectedModels[i], system, user);
+  });
+
+  // Run in parallel (fortified for efficiency)
+  const responses = await Promise.all(calls);
+
+  const artifacts = consolidate(responses, { niche, brand, domain, vibe }, classification);
+
+  return artifacts;
+});
+
+// Start server
+const start = async () => {
+  try {
+    await fastify.listen({ port: 3000 });
+  } catch (err) {
+    fastify.log.error(err);
+    process.exit(1);
+  }
+};
+start();

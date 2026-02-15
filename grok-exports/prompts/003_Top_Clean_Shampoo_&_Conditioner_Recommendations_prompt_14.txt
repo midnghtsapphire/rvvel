@@ -1,0 +1,7 @@
+# Prompt from: Top Clean Shampoo & Conditioner Recommendations
+
+Conversation ID: conv_3
+
+---
+
+Great idea. We need something for tracking ovulation. Trying to get pregnant, best positions everything reasdurance invitro fertilization reminders after getting prwgnant. Whats good for baby. Reassurance for those feeling blue not getting pregnant or positive results. Please deep reseach all chatter related to this and all pieces and really indepth help. Lets make separate api and mcp for each one. I can create one app or for each mcp?

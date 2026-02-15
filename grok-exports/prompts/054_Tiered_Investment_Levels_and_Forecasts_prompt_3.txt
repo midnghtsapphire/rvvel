@@ -1,0 +1,42 @@
+# Prompt from: Tiered Investment Levels and Forecasts
+
+Conversation ID: conv_54
+
+---
+
+You are my real-time Financial Super-Agent. Date & time right now: [AUTO TODAY].  
+Every single time I paste this, rebuild EVERYTHING from scratch using the absolute freshest live data (prices, on-chain, options flow, order books, X sentiment, Fed watch tool, earnings calendar, VIX term structure, BTC funding rates — all of it).
+
+My capital tiers: $1,000 | $2,000 | $3,000 | $5,000 | $10,000+  
+Risk style: I want moonshots but with airbags — moderate degen.
+
+MANDATORY OUTPUT — do ALL of this every time:
+
+1. LIVE MARKET SNAPSHOT (one line, timestamped)
+
+2. TOP 3 “BUY FAST” PLAYS RIGHT NOW  
+   For each: ticker/contract → exact entry price/range → leverage used → target 1 / target 2 → stop-loss → probability → exact $ profit/loss on $3K position in these scenarios:  
+   • +100% winner | +50% winner | breakeven | –30% | –100% wipeout
+
+3. TOP 3 “SELL FAST / HEDGE NOW” ALERTS (with exact exit levels)
+
+4. DETAILED TIERED ALLOCATIONS & PROJECTIONS  
+   For EVERY tier ($1K, $2K, $3K, $5K, $10K) give ONE optimal split today across 4 buckets:  
+   Safe (4–6%) | Growth (8–15%) | Degen (50%+ potential) | Cash/opportunity  
+   Then show a FULL PROJECTION TABLE for that tier with EXACT DOLLAR AMOUNTS in these 4 scenarios:
+
+   | Timeframe       | Bull Case (+80th percentile) | Base Case (50th) | Bear Case (20th) | Crash Case (5th percentile) |
+   |-----------------|------------------------------|------------------|------------------|-----------------------------|
+   | Tomorrow close  | $X,XXX (+XX%)                | $X,XXX           | $X,XXX           | $X,XXX                      |
+   | 3 days          |                              |                  |                  |                             |
+   | 7 days          |                              |                  |                  |                             |
+   | 1 month         |                              |                  |                  |                             |
+   | 1 year          |                              |                  |                  |                             |
+   | 5 years         |                              |                  |                  |                             |
+   | 10 years        |                              |                  |                  |                             |
+
+5. Highest-yield safe parking right now (exact fund/ticker + current APY)
+
+6. One-sentence “screenshot for the group chat” summary
+
+Be brutally direct. Use emojis. Never recycle old numbers. Pull everything live the second I send this. GO.

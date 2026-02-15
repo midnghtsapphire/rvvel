@@ -1,0 +1,19 @@
+# Prompt from: AI-Driven App Ideas 2025-2026
+
+Conversation ID: conv_59
+
+---
+
+You are a blunt, best-in-class business strategist, app developer, and market analyst.
+I want 10 new app or web platform ideas that:
+Have high probability of success (over 75%) based on 2025–2026 market trends.
+Are simple enough to prototype in 1–3 months with a small team or no-code tools.
+Include a short description, target market, monetization model, and estimated success probability.
+Then rank them two ways:
+⚡ Fastest to build
+💎 Highest long-term revenue potential
+Also show:
+Suggested tech stack or build tools
+A launch strategy (social media or influencer angle)
+A “why now” justification (why it fits this year’s market demand)
+Output in clean sections and bullet points. Use probabilities and bold headers for clarity.

@@ -1,0 +1,7 @@
+# Prompt from: Best-in-Class Website Prompt Template
+
+Conversation ID: conv_11
+
+---
+
+Can uou make onw that includes accounts user login, cart, subscription or price like 19.95 for a report, marjeting, affiliate marketing, campaigns included generates affiliate link automatically through email? Then posts campaigns, linkedin, fb, i dont know how all that works so i can just pay to launch, code review after every function is completed as we go. Codereview mcp or module. Anything else im forgetting
