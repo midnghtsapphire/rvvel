@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Data Router (Revvel)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Revvel</h1>
+                <p class="tagline">Universal Data Router</p>
+            </div>
+            <nav>
+                <button class="btn-primary" id="auto-sort-btn">Auto-Sort</button>
+                <button class="btn-secondary" id="auto-download-btn">Auto-Download</button>
+            </nav>
+        </header>
+
+        <main>
+            <aside class="sidebar">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <h4>Date Range</h4>
+                    <button class="filter-btn" data-range="today">Today</button>
+                    <button class="filter-btn" data-range="week">This Week</button>
+                    <button class="filter-btn" data-range="month">This Month</button>
+                    <button class="filter-btn" data-range="custom">Custom Range</button>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Category</h4>
+                    <button class="filter-btn" data-category="code">Code</button>
+                    <button class="filter-btn" data-category="document">Document</button>
+                    <button class="filter-btn" data-category="legal">Legal</button>
+                    <button class="filter-btn" data-category="music">Music</button>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Source</h4>
+                    <button class="filter-btn" data-source="gmail">Gmail</button>
+                    <button class="filter-btn" data-source="claude">Claude</button>
+                    <button class="filter-btn" data-source="upload">Uploads</button>
+                </div>
+            </aside>
+
+            <section class="content">
+                <div class="toolbar">
+                    <input type="search" id="search-bar" placeholder="Search items..." aria-label="Search items">
+                    <button class="btn-action" id="export-btn">Export Selected</button>
+                    <button class="btn-danger" id="delete-btn">Delete</button>
+                </div>
+
+                <div id="items-list" class="items-list">
+                    <!-- Items will be dynamically loaded here -->
+                    <div class="item-card">
+                        <input type="checkbox" class="item-checkbox" aria-label="Select item">
+                        <div class="item-content">
+                            <h4>Sample Item</h4>
+                            <p class="item-meta">From: example@email.com | Category: code | 2 hours ago</p>
+                            <div class="item-tags">
+                                <span class="tag">python</span>
+                                <span class="tag">api</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Multi-destination routing modal -->
+    <div id="routing-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <h2 id="modal-title">Select Destinations</h2>
+            <div class="destination-list">
+                <label>
+                    <input type="checkbox" value="github"> GitHub (audrey-evans-official)
+                </label>
+                <label>
+                    <input type="checkbox" value="gdrive"> Google Drive (/Revvel)
+                </label>
+                <label>
+                    <input type="checkbox" value="email"> Email Forward
+                </label>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="send-btn">Send</button>
+                <button class="btn-secondary" id="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Powered by free sources and APIs | © 2026 Audrey Evans</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
