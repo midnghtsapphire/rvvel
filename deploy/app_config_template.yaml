@@ -1,0 +1,242 @@
+# ============================================================================
+# SOUP-TO-NUTS APP CONFIGURATION TEMPLATE
+# Audrey Evans Official / GlowStarLabs
+# ============================================================================
+# Copy this file to your project root as app_config.yaml and fill in values.
+# Usage: python deploy/soup_to_nuts.py --config app_config.yaml
+# ============================================================================
+
+# --- APP IDENTITY ---
+app:
+  name: "Project Face"                    # Internal name (snake_case auto-generated)
+  display_name: "Project Face"            # User-facing name
+  description: "AI-powered skin analysis and personalized skincare recommendations"
+  version: "1.0.0"
+  tagline: "Your skin, decoded by AI"
+  parent_company: "Audrey Evans Official"
+  parent_brand: "GlowStarLabs"
+
+# --- DOMAIN & HOSTING ---
+domain:
+  primary: "glowstarlabs.com"
+  aliases:
+    - "meetaudreyevans.com"
+    - "audreyevansofficial.com"
+  ssl: true
+  cdn: true
+
+# --- DEPLOYMENT TARGET ---
+deployment:
+  platform: "docker"                      # docker | vercel | railway | digitalocean
+  region: "us-west-2"
+  tier: "full"                            # full | web-only | api-only | mobile-only
+  targets:
+    web: true
+    mobile_android: true
+    mobile_ios: true
+    desktop_windows: true
+    desktop_mac: true
+    desktop_linux: true
+
+# --- BRANDING ---
+branding:
+  theme: "glassmorphism-dark"             # glassmorphism-dark | glassmorphism-light | custom
+  primary_color: "#F59E0B"               # Warm amber
+  secondary_color: "#D97706"             # Darker amber
+  accent_color: "#FBBF24"               # Light amber
+  background_dark: "#0F0F0F"            # Near black
+  background_glass: "rgba(255,255,255,0.05)"
+  text_primary: "#F5F5F5"
+  text_secondary: "#A3A3A3"
+  border_glass: "rgba(255,255,255,0.1)"
+  blur_amount: "16px"
+  font_heading: "Inter"
+  font_body: "Inter"
+  favicon: ""                             # Path to favicon, auto-generated if empty
+  logo: ""                                # Path to logo, auto-generated if empty
+  wcag_level: "AAA"                       # AA | AAA
+
+# --- ACCESSIBILITY ---
+accessibility:
+  wcag_level: "AAA"
+  visual_only_notifications: true         # No audio-dependent features
+  high_contrast_mode: true
+  screen_reader_optimized: true
+  keyboard_navigation: true
+  reduced_motion_support: true
+  caption_all_media: true
+  min_touch_target: "48px"
+  min_font_size: "16px"
+
+# --- DATABASE ---
+database:
+  engine: "postgresql"
+  name: "project_face_db"
+  host: "${DB_HOST:-localhost}"
+  port: 5432
+  user: "${DB_USER:-postgres}"
+  password: "${DB_PASSWORD}"
+  pool_size: 20
+  max_overflow: 10
+  ssl_mode: "prefer"
+
+# --- AUTHENTICATION ---
+auth:
+  providers:
+    - google_oauth
+    - apple_signin
+    - email_password
+  jwt_expiry_hours: 24
+  refresh_token_days: 30
+  mfa_enabled: false
+  password_min_length: 8
+
+# --- PAYMENTS (STRIPE) ---
+payments:
+  provider: "stripe"
+  currency: "usd"
+  subscription_tiers:
+    free:
+      price: 0
+      tokens: 10
+      features: ["skin_analysis_basic"]
+      stripe_price_id: ""
+    starter:
+      price: 9
+      tokens: 100
+      features: ["skin_analysis", "makeup_advisor", "diy_recipes"]
+      stripe_price_id: ""
+    pro:
+      price: 29
+      tokens: 500
+      features: ["all", "priority_support", "clinical_trials"]
+      stripe_price_id: ""
+    business:
+      price: 99
+      tokens: 2000
+      features: ["all", "api_access", "white_label", "analytics"]
+      stripe_price_id: ""
+    enterprise:
+      price: 299
+      tokens: 10000
+      features: ["all", "dedicated_support", "custom_integration", "sla"]
+      stripe_price_id: ""
+  ad_tiers:
+    basic: 20
+    standard: 50
+    premium: 100
+    featured: 200
+    spotlight: 500
+    exclusive: 1000
+    domination: 2000
+
+# --- API KEYS (reference .env variable names) ---
+api_keys:
+  stripe_secret: "${STRIPE_SECRET_KEY}"
+  stripe_publishable: "${STRIPE_PUBLISHABLE_KEY}"
+  stripe_webhook_secret: "${STRIPE_WEBHOOK_SECRET}"
+  openrouter: "${OPENROUTER_API_KEY}"
+  openai: "${OPENAI_API_KEY}"
+  perplexity: "${PERPLEXITY_API_KEY}"
+  openweathermap: "${OPENWEATHERMAP_API_KEY}"
+  amazon_associates_tag: "${AMAZON_ASSOCIATES_TAG}"
+  amazon_access_key: "${AMAZON_ACCESS_KEY}"
+  amazon_secret_key: "${AMAZON_SECRET_KEY}"
+  google_client_id: "${GOOGLE_CLIENT_ID}"
+  google_client_secret: "${GOOGLE_CLIENT_SECRET}"
+  apple_client_id: "${APPLE_CLIENT_ID}"
+  apple_team_id: "${APPLE_TEAM_ID}"
+  apple_key_id: "${APPLE_KEY_ID}"
+  gmail_credentials: "${GMAIL_CREDENTIALS_PATH}"
+  github_token: "${GITHUB_TOKEN}"
+
+# --- FEATURE FLAGS ---
+features:
+  skin_analysis: true
+  gps_personalization: true
+  weather_skincare: true
+  clinical_trials: true
+  prescription_awareness: true
+  hidden_procedures: true
+  medical_tourism: true
+  permanent_makeup: true
+  foot_analysis: true
+  diy_skincare: true
+  makeup_advisor: true
+  procedure_finder: true
+  affiliate_auto_linker: true
+  selling_space: true
+  subscription_manager: true
+  universal_data_router: true
+  ai_benchmarking: true
+  admin_dashboard: true
+  landing_page: true
+  medical_disclaimer: true
+  notification_system: true
+  analytics_tracking: true
+
+# --- MODULES TO INCLUDE ---
+modules:
+  - auth_module
+  - payment_module
+  - affiliate_module
+  - analytics_module
+  - notification_module
+  - admin_dashboard
+  - landing_page
+  - selling_space_module
+
+# --- APP STORE METADATA ---
+app_store:
+  google_play:
+    package_name: "com.glowstarlabs.projectface"
+    category: "HEALTH_AND_FITNESS"
+    content_rating: "Everyone"
+    short_description: "AI skin analysis & personalized skincare"
+    full_description: |
+      Project Face uses advanced AI to analyze your skin and provide
+      personalized skincare recommendations based on your location,
+      climate, and individual needs. Features include clinical trials
+      finder, procedure recommendations, DIY recipes, and more.
+    keywords:
+      - skin analysis
+      - skincare AI
+      - dermatology
+      - beauty advisor
+      - clinical trials
+    screenshots: []                       # Paths to screenshots
+    feature_graphic: ""
+    privacy_policy_url: "https://glowstarlabs.com/privacy"
+    terms_url: "https://glowstarlabs.com/terms"
+  apple_app_store:
+    bundle_id: "com.glowstarlabs.projectface"
+    category: "Health & Fitness"
+    subcategory: "Health"
+    age_rating: "4+"
+    description: |
+      Project Face uses advanced AI to analyze your skin and provide
+      personalized skincare recommendations based on your location,
+      climate, and individual needs.
+    keywords: "skin,skincare,AI,analysis,beauty,dermatology,clinical,trials"
+    screenshots: []
+    privacy_url: "https://glowstarlabs.com/privacy"
+    support_url: "https://glowstarlabs.com/support"
+
+# --- MONITORING ---
+monitoring:
+  error_tracking: true
+  uptime_monitoring: true
+  analytics: true
+  log_level: "INFO"
+  health_check_interval: 60
+  alert_email: "audrey@meetaudreyevans.com"
+
+# --- CI/CD ---
+ci_cd:
+  provider: "github_actions"
+  auto_deploy_on_push: true
+  branch_deploy: "main"
+  branch_staging: "staging"
+  run_tests: true
+  run_lint: true
+  run_accessibility_audit: true

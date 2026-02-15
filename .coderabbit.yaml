@@ -1,0 +1,47 @@
+# CodeRabbit Configuration — Audrey Evans Official
+# Automated code review for every PR
+# https://coderabbit.ai
+
+reviews:
+  profile: "assertive"
+  request_changes_workflow: true
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false
+
+chat:
+  auto_reply: true
+
+# Custom review instructions aligned with 8 mandatory standards
+instructions: |
+  Review all code against these 8 mandatory Audrey Evans Official standards:
+
+  1. NO BLUE LIGHT: Verify no pure blue colors. Dark mode default. Warm amber tones only.
+  2. ECO CODE: Check for aggressive caching, minimal API calls, lightweight models first.
+  3. NEURODIVERGENT-FRIENDLY: No flashing, no autoplay, no sudden sounds. Clear hierarchy.
+  4. GLASSMORPHISM: Frosted glass effects, backdrop-blur, warm amber gradients.
+  5. BEST IN CLASS: Production-grade quality. No shortcuts. No TODOs in production code.
+  6. BLUE OCEAN: Unique features for underserved markets.
+  7. ALT TEXT EVERYWHERE: WCAG AAA. ARIA labels on all interactive elements. Visual-only notifications.
+  8. CARBON SAVINGS: CO2 tracking on API calls. Starbucks cups equivalent displayed.
+
+  Additional requirements:
+  - No audio-dependent features (Audrey's daughter is legally deaf)
+  - All images must have alt text
+  - Minimum 48px touch targets
+  - Focus indicators on all interactive elements
+  - Medical disclaimers on health-related content
+
+path_instructions:
+  - path: "frontend/**"
+    instructions: "Check for WCAG AAA compliance, ARIA labels, no blue colors, glassmorphism styling."
+  - path: "backend/**"
+    instructions: "Check for caching, error handling, medical disclaimers, carbon tracking."
+  - path: "tests/**"
+    instructions: "Ensure tests cover all 8 mandatory standards."
+  - path: "deploy/**"
+    instructions: "Verify soup-to-nuts script enforces all mandatory defaults."

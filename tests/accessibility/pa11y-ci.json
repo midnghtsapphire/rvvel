@@ -1,0 +1,21 @@
+{
+  "defaults": {
+    "standard": "WCAG2AAA",
+    "timeout": 30000,
+    "wait": 2000,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox"]
+    }
+  },
+  "urls": [
+    "http://localhost:3000/",
+    "http://localhost:3000/login",
+    "http://localhost:3000/register",
+    "http://localhost:3000/dashboard",
+    "http://localhost:3000/analyze",
+    "http://localhost:3000/clinical-trials",
+    "http://localhost:3000/procedures",
+    "http://localhost:3000/pricing",
+    "http://localhost:3000/settings"
+  ]
+}
