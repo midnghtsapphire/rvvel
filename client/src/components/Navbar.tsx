@@ -8,6 +8,9 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Journey", href: "#journey" },
+  { label: "Research", href: "#publications" },
+  { label: "Inventions", href: "#inventions" },
   { label: "Resume", href: "#resume" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Music", href: "#music" },
@@ -62,7 +65,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center gap-1" role="list">
+        <ul className="hidden lg:flex items-center gap-0.5" role="list">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -71,7 +74,7 @@ export default function Navbar() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="px-3 py-2 text-sm font-medium text-warm-200 hover:text-warm-50 transition-colors duration-200 rounded-md hover:bg-white/5"
+                className="px-2.5 py-2 text-sm font-medium text-warm-200 hover:text-warm-50 transition-colors duration-200 rounded-md hover:bg-white/5"
               >
                 {link.label}
               </a>
@@ -82,7 +85,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-warm-200 transition-colors"
+          className="lg:hidden p-2 text-warm-200 transition-colors"
           style={{ color: isOpen ? "#dc2626" : undefined }}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -96,7 +99,7 @@ export default function Navbar() {
       {isOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden glass-panel-strong"
+          className="lg:hidden glass-panel-strong"
           style={{ borderTop: "1px solid rgba(169, 149, 128, 0.1)" }}
           role="menu"
         >

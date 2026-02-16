@@ -1,8 +1,9 @@
 /*
  * Design: Earth & Canopy
- * Music section — Audrey Evans / Revvel / Hail artist showcase.
+ * Music section — Audrey Evans (solo) + Revvel Hail (band) artist showcase.
  * Crimson/gold accents for the creative/music vibe. NO blue light.
  * Real artist page feel — streams, platforms, embedded player.
+ * Spotify embed for album 4LfS8u61VzNgmEOUBgDNn3.
  */
 import { useInView } from "@/hooks/useInView";
 import { Music2, Headphones, ExternalLink, Disc3, TrendingUp, Mic2 } from "lucide-react";
@@ -46,9 +47,7 @@ export default function MusicSection() {
             <p className="text-warm-300 text-lg md:text-xl mb-4">
               <span style={{ color: "#d97706" }}>#MeetAudreyEvans</span>
               <span className="text-warm-500 mx-2">|</span>
-              <span style={{ color: "#dc2626" }}>Revvel</span>
-              <span className="text-warm-500 mx-2">/</span>
-              <span style={{ color: "#d97706" }}>Hail</span>
+              <span style={{ color: "#dc2626" }}>Revvel Hail</span>
             </p>
             <div className="gold-line w-24" />
           </div>
@@ -105,21 +104,17 @@ export default function MusicSection() {
                     Audrey Evans
                   </span>
                 </div>
-                <div className="flex gap-3">
-                  <div
-                    className="glass-panel px-3 py-2 flex-1 text-center"
-                    style={{ borderColor: "rgba(185, 28, 28, 0.2)" }}
-                  >
-                    <span className="text-warm-400 text-[10px] uppercase tracking-wider block">Band</span>
-                    <span className="font-serif text-base" style={{ color: "#dc2626" }}>Revvel</span>
+                <div
+                  className="glass-panel px-4 py-3 text-center"
+                  style={{ borderColor: "rgba(217, 119, 6, 0.2)" }}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <Music2 size={14} style={{ color: "#d97706" }} aria-hidden="true" />
+                    <span className="text-warm-400 text-xs uppercase tracking-wider">Band</span>
                   </div>
-                  <div
-                    className="glass-panel px-3 py-2 flex-1 text-center"
-                    style={{ borderColor: "rgba(217, 119, 6, 0.2)" }}
-                  >
-                    <span className="text-warm-400 text-[10px] uppercase tracking-wider block">Band</span>
-                    <span className="font-serif text-base" style={{ color: "#d97706" }}>Hail</span>
-                  </div>
+                  <span className="font-serif text-lg" style={{ color: "#d97706" }}>
+                    Revvel Hail
+                  </span>
                 </div>
               </div>
             </div>
@@ -129,9 +124,8 @@ export default function MusicSection() {
               <p className="text-warm-200 text-base md:text-lg leading-relaxed">
                 As a published musician, Audrey performs and produces under multiple artist names —
                 solo as <strong style={{ color: "#dc2626" }}>Audrey Evans</strong>{" "}
-                (<span style={{ color: "#d97706" }}>#MeetAudreyEvans</span>), and with her band projects{" "}
-                <strong style={{ color: "#dc2626" }}>Revvel</strong> and{" "}
-                <strong style={{ color: "#d97706" }}>Hail</strong>. Her music blends
+                (<span style={{ color: "#d97706" }}>#MeetAudreyEvans</span>), and with her band project{" "}
+                <strong style={{ color: "#d97706" }}>Revvel Hail</strong>. Her music blends
                 personal storytelling with powerful production, drawing from her life experiences
                 as an inventor, advocate, and survivor.
               </p>
@@ -156,7 +150,7 @@ export default function MusicSection() {
                 >
                   <iframe
                     style={{ borderRadius: "12px" }}
-                    src="https://open.spotify.com/embed/album/4LfS8u61VzNgmEOUBgDNn3?utm_source=generator"
+                    src="https://open.spotify.com/embed/album/4LfS8u61VzNgmEOUBgDNn3?utm_source=generator&theme=0"
                     width="100%"
                     height="352"
                     frameBorder="0"
@@ -169,12 +163,42 @@ export default function MusicSection() {
               </div>
 
               {/* Platform Links */}
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-4">
+                <a
+                  href="https://open.spotify.com/album/4LfS8u61VzNgmEOUBgDNn3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-medium text-sm transition-all duration-200 hover:scale-[1.02]"
+                  style={{
+                    backgroundColor: "rgba(22, 101, 52, 0.15)",
+                    border: "1px solid rgba(22, 101, 52, 0.25)",
+                    color: "#22c55e",
+                  }}
+                >
+                  <Disc3 size={18} aria-hidden="true" />
+                  Spotify
+                  <ExternalLink size={14} aria-hidden="true" />
+                </a>
+                <a
+                  href="https://music.apple.com/us/artist/audrey-evans"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-medium text-sm transition-all duration-200 hover:scale-[1.02]"
+                  style={{
+                    backgroundColor: "rgba(185, 28, 28, 0.15)",
+                    border: "1px solid rgba(185, 28, 28, 0.25)",
+                    color: "#dc2626",
+                  }}
+                >
+                  <Music2 size={18} aria-hidden="true" />
+                  Apple Music
+                  <ExternalLink size={14} aria-hidden="true" />
+                </a>
                 <a
                   href="https://artists.landr.com/057914347707"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm transition-all duration-200 hover:scale-[1.02]"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-medium text-sm transition-all duration-200 hover:scale-[1.02]"
                   style={{
                     backgroundColor: "rgba(217, 119, 6, 0.15)",
                     border: "1px solid rgba(217, 119, 6, 0.25)",
@@ -182,14 +206,14 @@ export default function MusicSection() {
                   }}
                 >
                   <Music2 size={18} aria-hidden="true" />
-                  Listen on LANDR
+                  LANDR
                   <ExternalLink size={14} aria-hidden="true" />
                 </a>
                 <a
                   href="https://soundcloud.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm transition-all duration-200 hover:scale-[1.02]"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-medium text-sm transition-all duration-200 hover:scale-[1.02]"
                   style={{
                     backgroundColor: "rgba(185, 28, 28, 0.15)",
                     border: "1px solid rgba(185, 28, 28, 0.25)",
@@ -197,7 +221,7 @@ export default function MusicSection() {
                   }}
                 >
                   <Headphones size={18} aria-hidden="true" />
-                  Listen on SoundCloud
+                  SoundCloud
                   <ExternalLink size={14} aria-hidden="true" />
                 </a>
               </div>
@@ -223,7 +247,7 @@ export default function MusicSection() {
                   >
                     LANDR
                   </a>
-                  , Spotify, and more platforms.
+                  , Spotify, Apple Music, SoundCloud, and more.
                 </span>
               </div>
             </div>

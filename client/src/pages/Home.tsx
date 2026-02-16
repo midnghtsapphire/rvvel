@@ -7,6 +7,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import Journey from "@/components/sections/Journey";
+import Publications from "@/components/sections/Publications";
+import Inventions from "@/components/sections/Inventions";
 import Resume from "@/components/sections/Resume";
 import Portfolio from "@/components/sections/Portfolio";
 import MusicSection from "@/components/sections/Music";
@@ -35,6 +38,18 @@ export default function Home() {
         <div className="earth-line" aria-hidden="true" />
 
         <About />
+
+        <div className="earth-line" aria-hidden="true" />
+
+        <Journey />
+
+        <div className="earth-line" aria-hidden="true" />
+
+        <Publications />
+
+        <div className="earth-line" aria-hidden="true" />
+
+        <Inventions />
 
         <div className="earth-line" aria-hidden="true" />
 

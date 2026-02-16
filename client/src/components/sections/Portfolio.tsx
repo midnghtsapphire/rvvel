@@ -2,42 +2,51 @@
  * Design: Earth & Canopy
  * Portfolio section — glass cards for each app in the ecosystem.
  * Forest green accents for tech/innovation. NO blue light.
+ * Links point to LIVE GitHub Pages URLs, not repo URLs.
  */
 import { useInView } from "@/hooks/useInView";
 import { ExternalLink, Sparkles, FileText, Router, Mail, BarChart3, Link as LinkIcon } from "lucide-react";
 
 const apps = [
   {
-    name: "Project Face",
-    description: "AI-powered skin analysis application using computer vision to provide personalized skincare insights and recommendations.",
-    icon: Sparkles,
-    status: "In Development",
-    tags: ["AI", "Computer Vision", "Healthcare"],
-    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/project-face",
-  },
-  {
     name: "TheAltText",
     description: "Automated alt text generator that makes images accessible for screen readers, powered by AI image recognition.",
     icon: FileText,
-    status: "In Development",
+    status: "Live",
     tags: ["Accessibility", "AI", "Web Tools"],
-    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/thealttext",
+    liveUrl: "https://midnghtsapphire.github.io/thealttext/",
   },
   {
     name: "Universal Data Router",
     description: "Multi-source file organizer that intelligently routes, categorizes, and manages data across different platforms and formats.",
     icon: Router,
-    status: "In Development",
+    status: "Live",
     tags: ["Data", "Automation", "Productivity"],
-    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/universal-data-router",
+    liveUrl: "https://midnghtsapphire.github.io/universal-data-router/",
+  },
+  {
+    name: "Project Face",
+    description: "AI-powered skin analysis application using computer vision to provide personalized skincare insights and recommendations.",
+    icon: Sparkles,
+    status: "Live",
+    tags: ["AI", "Computer Vision", "Healthcare"],
+    liveUrl: "https://midnghtsapphire.github.io/project-face/",
   },
   {
     name: "Revvel Email Organizer",
     description: "AI-powered email categorization system that brings order to chaotic inboxes with smart filtering and priority management.",
     icon: Mail,
-    status: "In Development",
+    status: "Live",
     tags: ["AI", "Email", "Productivity"],
-    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/revvel-email-organizer",
+    liveUrl: "https://midnghtsapphire.github.io/revvel-email-organizer/",
+  },
+  {
+    name: "AI Benchmarking Tool",
+    description: "Comprehensive benchmarking suite for evaluating and comparing AI model performance across standardized metrics.",
+    icon: BarChart3,
+    status: "Live",
+    tags: ["AI", "Analytics", "Research"],
+    liveUrl: "https://midnghtsapphire.github.io/ai-benchmarking-tool/",
   },
   {
     name: "Affiliate Links",
@@ -45,14 +54,7 @@ const apps = [
     icon: LinkIcon,
     status: "In Development",
     tags: ["MCP", "Affiliate", "Revenue"],
-    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/rvvel-affiliate-links-mcp",
-  },
-  {
-    name: "AI Benchmarking Tool",
-    description: "Comprehensive benchmarking suite for evaluating and comparing AI model performance across standardized metrics.",
-    icon: BarChart3,
-    status: "In Development",
-    tags: ["AI", "Analytics", "Research"],
+    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/rvvel-affiliate-links-mcp",
   },
 ];
 
@@ -91,8 +93,8 @@ export default function Portfolio() {
               Apps &amp; Innovations
             </h2>
             <p className="text-warm-400 text-base md:text-lg max-w-2xl">
-              Each application is being developed as a standalone product under the GlowStar Labs
-              ecosystem. Click any card to view its GitHub repository.
+              Each application is developed as a standalone product under the GlowStar Labs
+              ecosystem. Click any card to view the live application.
             </p>
             <div className="gold-line w-24 mt-4" />
           </div>
@@ -101,7 +103,7 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {apps.map((app) => {
               const Icon = app.icon;
-              const hasRepo = !!app.repoUrl;
+              const isLive = app.status === "Live";
 
               const cardContent = (
                 <>
@@ -141,7 +143,11 @@ export default function Portfolio() {
                   <span className="inline-flex items-center gap-1.5 text-xs font-medium text-warm-500">
                     <span
                       className="w-1.5 h-1.5 rounded-full"
-                      style={{ backgroundColor: "rgba(34, 197, 94, 0.6)" }}
+                      style={{
+                        backgroundColor: isLive
+                          ? "rgba(34, 197, 94, 0.9)"
+                          : "rgba(217, 119, 6, 0.6)",
+                      }}
                       aria-hidden="true"
                     />
                     {app.status}
@@ -149,29 +155,17 @@ export default function Portfolio() {
                 </>
               );
 
-              if (hasRepo) {
-                return (
-                  <a
-                    key={app.name}
-                    href={app.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg block"
-                    style={{ boxShadow: "0 4px 20px rgba(22, 101, 52, 0.05)" }}
-                  >
-                    {cardContent}
-                  </a>
-                );
-              }
-
               return (
-                <div
+                <a
                   key={app.name}
-                  className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  href={app.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg block"
                   style={{ boxShadow: "0 4px 20px rgba(22, 101, 52, 0.05)" }}
                 >
                   {cardContent}
-                </div>
+                </a>
               );
             })}
           </div>
