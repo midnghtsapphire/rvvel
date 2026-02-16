@@ -67,17 +67,27 @@ export default function Advocacy() {
       <div className="container relative z-10">
         <div ref={ref} className={`fade-in-section ${isVisible ? "visible" : ""}`}>
           {/* Section Header */}
-          <div className="mb-12 md:mb-16">
-            <p
-              className="font-medium text-sm tracking-widest uppercase mb-2"
-              style={{ color: "#d97706" }}
-            >
-              Advocacy
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-50 mb-4">
-              Freedom Angel Corps
-            </h2>
-            <div className="gold-line w-24" />
+          <div className="mb-12 md:mb-16 flex flex-col md:flex-row items-center md:items-start gap-6">
+            <div className="flex-shrink-0">
+              <img
+                src="/freedom-angel-corps-logo.png"
+                alt="Freedom Angel Corps logo — We Believe You"
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg"
+                style={{ boxShadow: "0 8px 30px rgba(217, 119, 6, 0.2)" }}
+              />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <p
+                className="font-medium text-sm tracking-widest uppercase mb-2"
+                style={{ color: "#d97706" }}
+              >
+                Advocacy
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-50 mb-4">
+                Freedom Angel Corps
+              </h2>
+              <div className="gold-line w-24 mx-auto md:mx-0" />
+            </div>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
