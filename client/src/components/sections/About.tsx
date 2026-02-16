@@ -66,30 +66,31 @@ export default function About() {
 
             {/* Bio Content */}
             <div className="flex-1 space-y-5">
-              {/* Heritage Banner — prominent placement */}
+              {/* Heritage Statement — prominently featured */}
               <div
-                className="glass-panel-strong px-5 py-4 rounded-xl"
+                className="glass-panel p-5 rounded-xl"
                 style={{
                   borderColor: "rgba(217, 119, 6, 0.3)",
-                  background: "linear-gradient(135deg, rgba(217, 119, 6, 0.08) 0%, rgba(22, 101, 52, 0.08) 50%, rgba(185, 28, 28, 0.08) 100%)",
+                  background: "linear-gradient(135deg, rgba(217, 119, 6, 0.08) 0%, rgba(185, 28, 28, 0.06) 50%, rgba(22, 101, 52, 0.06) 100%)",
                 }}
               >
-                <p
-                  className="font-serif text-lg md:text-xl font-medium leading-relaxed"
-                  style={{ color: "#f5ede4" }}
-                >
+                <p className="text-warm-100 text-lg md:text-xl leading-relaxed font-medium">
                   I am{" "}
                   <span style={{ color: "#d97706" }}>M&#257;ori New Zealander</span>,{" "}
-                  <span style={{ color: "#22c55e" }}>Portuguese</span>,{" "}
-                  <span style={{ color: "#dc2626" }}>Native Hawaiian</span>
+                  <span style={{ color: "#dc2626" }}>Portuguese</span>, and{" "}
+                  <span style={{ color: "#22c55e" }}>Native Hawaiian</span>.
+                </p>
+                <p className="text-warm-300 text-sm md:text-base mt-2 leading-relaxed">
+                  My heritage is the foundation of everything I build — from technology to music to advocacy.
+                  These roots ground my work in resilience, community, and a deep respect for the land and its people.
                 </p>
               </div>
 
               <p className="text-warm-200 text-base md:text-lg leading-relaxed">
-                Audrey Evans is a proud M&#257;ori New Zealander, Portuguese, and Native Hawaiian woman with over three decades of
-                experience in information technology. Her career spans the full spectrum of the tech
-                industry — from software engineering and database architecture to geospatial engineering,
-                data science, business intelligence, and program/project management.
+                Audrey Evans is a proud and responsible Native Hawaiian, M&#257;ori New Zealander, and Portuguese
+                woman with over three decades of experience in information technology. Her career spans the full
+                spectrum of the tech industry — from software engineering and database architecture to geospatial
+                engineering, data science, business intelligence, and program/project management.
               </p>
               <p className="text-warm-300 text-base md:text-lg leading-relaxed">
                 A PMP-certified professional since 2015, Audrey has held roles at the Orange County
@@ -101,9 +102,7 @@ export default function About() {
               <p className="text-warm-300 text-base md:text-lg leading-relaxed">
                 Beyond corporate tech, Audrey is an inventor of businesses, biopolymers, biocomposites,
                 bio filaments for 3D printing, and the Manta Explorer — a self-repairing UAS drone. She
-                is a published author on SSRN, a published musician performing as{" "}
-                <strong style={{ color: "#dc2626" }}>Audrey Evans</strong> and{" "}
-                <strong style={{ color: "#d97706" }}>Revvel Hail</strong>,
+                is a published author on SSRN, a published musician performing as Revvel and Hail,
                 a Paralegal De Facto in Colorado, and a CLE instructor/sponsor for the Colorado Supreme
                 Court and Orange County DA Criminal Division.
               </p>
