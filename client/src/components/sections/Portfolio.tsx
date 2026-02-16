@@ -4,8 +4,7 @@
  * Forest green accents for tech/innovation. NO blue light.
  */
 import { useInView } from "@/hooks/useInView";
-import { ExternalLink, Sparkles, FileText, Router, Mail, BarChart3 } from "lucide-react";
-import { toast } from "sonner";
+import { ExternalLink, Sparkles, FileText, Router, Mail, BarChart3, Link as LinkIcon } from "lucide-react";
 
 const apps = [
   {
@@ -14,6 +13,7 @@ const apps = [
     icon: Sparkles,
     status: "In Development",
     tags: ["AI", "Computer Vision", "Healthcare"],
+    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/project-face",
   },
   {
     name: "TheAltText",
@@ -21,6 +21,7 @@ const apps = [
     icon: FileText,
     status: "In Development",
     tags: ["Accessibility", "AI", "Web Tools"],
+    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/thealttext",
   },
   {
     name: "Universal Data Router",
@@ -28,6 +29,7 @@ const apps = [
     icon: Router,
     status: "In Development",
     tags: ["Data", "Automation", "Productivity"],
+    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/universal-data-router",
   },
   {
     name: "Revvel Email Organizer",
@@ -35,6 +37,15 @@ const apps = [
     icon: Mail,
     status: "In Development",
     tags: ["AI", "Email", "Productivity"],
+    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/revvel-email-organizer",
+  },
+  {
+    name: "Affiliate Links",
+    description: "MCP server for managing and generating affiliate links across platforms, tracking performance and optimizing revenue.",
+    icon: LinkIcon,
+    status: "In Development",
+    tags: ["MCP", "Affiliate", "Revenue"],
+    repoUrl: "https://github.com/MIDNGHTSAPPHIRE/rvvel-affiliate-links-mcp",
   },
   {
     name: "AI Benchmarking Tool",
@@ -47,10 +58,6 @@ const apps = [
 
 export default function Portfolio() {
   const { ref, isVisible } = useInView();
-
-  const handleAppClick = (appName: string) => {
-    toast(`${appName} — Standalone deployment coming soon.`);
-  };
 
   return (
     <section
@@ -85,7 +92,7 @@ export default function Portfolio() {
             </h2>
             <p className="text-warm-400 text-base md:text-lg max-w-2xl">
               Each application is being developed as a standalone product under the GlowStar Labs
-              ecosystem. Click any card to learn more as they launch.
+              ecosystem. Click any card to view its GitHub repository.
             </p>
             <div className="gold-line w-24 mt-4" />
           </div>
@@ -94,13 +101,10 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {apps.map((app) => {
               const Icon = app.icon;
-              return (
-                <button
-                  key={app.name}
-                  onClick={() => handleAppClick(app.name)}
-                  className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                  style={{ boxShadow: "0 4px 20px rgba(22, 101, 52, 0.05)" }}
-                >
+              const hasRepo = !!app.repoUrl;
+
+              const cardContent = (
+                <>
                   <div className="flex items-start justify-between mb-4">
                     <div
                       className="w-10 h-10 rounded-lg flex items-center justify-center"
@@ -142,7 +146,32 @@ export default function Portfolio() {
                     />
                     {app.status}
                   </span>
-                </button>
+                </>
+              );
+
+              if (hasRepo) {
+                return (
+                  <a
+                    key={app.name}
+                    href={app.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg block"
+                    style={{ boxShadow: "0 4px 20px rgba(22, 101, 52, 0.05)" }}
+                  >
+                    {cardContent}
+                  </a>
+                );
+              }
+
+              return (
+                <div
+                  key={app.name}
+                  className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  style={{ boxShadow: "0 4px 20px rgba(22, 101, 52, 0.05)" }}
+                >
+                  {cardContent}
+                </div>
               );
             })}
           </div>
