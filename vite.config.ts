@@ -145,13 +145,18 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-// Build plugin list — only include manus runtime if available
-const plugins: Plugin[] = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusDebugCollector()];
-if (vitePluginManusRuntime) {
-  plugins.push(vitePluginManusRuntime());
+// Build plugin list — only include manus dev plugins when NOT building for production
+const isProduction = process.env.NODE_ENV === "production";
+const plugins: Plugin[] = [react(), tailwindcss(), jsxLocPlugin()];
+if (!isProduction) {
+  plugins.push(vitePluginManusDebugCollector());
+  if (vitePluginManusRuntime) {
+    plugins.push(vitePluginManusRuntime());
+  }
 }
 
 export default defineConfig({
+  base: "/",
   plugins,
   resolve: {
     alias: {
