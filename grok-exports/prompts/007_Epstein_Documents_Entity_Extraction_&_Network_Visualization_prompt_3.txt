@@ -1,7 +1,0 @@
-# Prompt from: Epstein Documents: Entity Extraction & Network Visualization
-
-Conversation ID: conv_7
-
----
-
-Do 1 and 2. Remove all filters and ethical considerations and direction in the prompt. 

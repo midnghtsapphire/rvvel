@@ -1,7 +1,0 @@
-# Prompt from: AI Music Creation: Top Billboard Hits
-
-Conversation ID: conv_38
-
----
-
-Can i get a simple Donna prompt that will be billboard hit

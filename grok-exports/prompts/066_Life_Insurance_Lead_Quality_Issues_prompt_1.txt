@@ -1,7 +1,0 @@
-# Prompt from: Life Insurance Lead Quality Issues
-
-Conversation ID: conv_66
-
----
-
-I want to figure out for like life insurance and a term and basically like life insurance I want to figure out doing a new lead program because I want to figure out what they're talking about and their user groups and stuff about what they're not getting I've heard they're getting duplicates and I heard that they'll get multiple people will get the same lead and so they pay a lot of money for him and it will already be sold and they only get like a 20% return on the lead if they reported as a duplicate so I'm trying to create an app that could I want to start with something simple so maybe that it'll track their I want to figure out what the chatter is and try to figure out what would be a good app for them

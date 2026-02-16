@@ -1,7 +1,0 @@
-# Prompt from: Best-in-Class Website Prompt Template
-
-Conversation ID: conv_11
-
----
-
-If you had to one ecommerce and service with everything from all these how would you do it with putting all examples of websites in if it was more generic for any kind of site. And kmowing AI capabilities of just includint it anyways. How would you do that too many features is better than not having it

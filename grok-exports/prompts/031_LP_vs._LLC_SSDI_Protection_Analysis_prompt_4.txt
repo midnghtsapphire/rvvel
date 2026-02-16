@@ -1,7 +1,0 @@
-# Prompt from: LP vs. LLC: SSDI Protection Analysis
-
-Conversation ID: conv_31
-
----
-
-Can you write a prompt. I'm not sure how to do it or how to word it but I want the wizard or something to even recommend oh if you open a cleaning business you could write off whatever like I want it to give suggestions so people can learn about using businesses to help

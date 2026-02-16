@@ -1,7 +1,0 @@
-# Prompt from: White Paper Virality: SEO, SEM, Citations
-
-Conversation ID: conv_49
-
----
-
-Your an expert multi agent with sub agents that immediately deploy in emerging markets, federal government and world economy, global economy with multiple doctorates in mechanical and electrical engineering, HEAT and uTEN, possibly as a service. Can you help me make this white paper a viral hit on srrn add better add more detail. Make sure the topics are enterlaced cognitively together. Please rearch seo and sem to make rhis have a titlw a d content that can go viral. And provide me separate docs. 1. How to market white papers. Get citations. Create a better prompt for this so I can learn morw about prompting.

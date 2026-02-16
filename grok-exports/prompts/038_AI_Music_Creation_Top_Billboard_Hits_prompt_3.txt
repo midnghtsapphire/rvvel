@@ -1,7 +1,0 @@
-# Prompt from: AI Music Creation: Top Billboard Hits
-
-Conversation ID: conv_38
-
----
-
-Can you dp a few different prompts mixing old with new

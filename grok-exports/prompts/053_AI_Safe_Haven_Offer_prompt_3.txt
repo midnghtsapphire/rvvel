@@ -1,7 +1,0 @@
-# Prompt from: AI Safe Haven Offer
-
-Conversation ID: conv_53
-
----
-
-Lets create an asvanced prompt agent for botanist

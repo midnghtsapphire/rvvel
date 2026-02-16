@@ -1,7 +1,0 @@
-# Prompt from: Top Clean Shampoo & Conditioner Recommendations
-
-Conversation ID: conv_3
-
----
-
-Can you make one huge prompt for loveable that auto generates everything using eleven labs

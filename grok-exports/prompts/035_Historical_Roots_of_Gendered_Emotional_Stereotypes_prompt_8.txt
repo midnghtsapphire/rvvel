@@ -1,7 +1,0 @@
-# Prompt from: Historical Roots of Gendered Emotional Stereotypes
-
-Conversation ID: conv_35
-
----
-
-Make prompt more detailed

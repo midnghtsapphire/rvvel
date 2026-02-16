@@ -1,7 +1,0 @@
-# Prompt from: Crafting Song: Beyoncé-Inspired Queen Vibe
-
-Conversation ID: conv_67
-
----
-
-I'm having trouble trying to create a song with a different genre that I'm used to I want to go more for like the sound of Beyoncé on her homecoming album the songs called Diva something I like to do a song kind of framed like that I don't want to copy anybody but I want I want that sound can you help me generate a full stack song with lyrics and that Vibe and like if I were to use a music producing app or say I put it in AI what would my prompt look like I'm trying to study prompts now so I learned to do them better

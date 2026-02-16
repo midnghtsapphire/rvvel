@@ -1,7 +1,0 @@
-# Prompt from: Historical Roots of Gendered Emotional Stereotypes
-
-Conversation ID: conv_35
-
----
-
-Okay what  genes, loci, poly, in adhd are effected with a comparison to gpl1 and gplr shots. How do or could we make a similar shot for adhd? Can you create an expert prompt for this?

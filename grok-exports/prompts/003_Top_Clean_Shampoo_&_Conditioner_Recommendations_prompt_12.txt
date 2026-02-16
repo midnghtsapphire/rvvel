@@ -1,7 +1,0 @@
-# Prompt from: Top Clean Shampoo & Conditioner Recommendations
-
-Conversation ID: conv_3
-
----
-
-Can you create a detailed blueprint, roadmap, project plan, kanban cards, investors pack, wireframes, bom list for new products we make. Dropshippers, ingredients, Pseuodo code, code, business plan, user docs, tech specs, database architecture, indiegogo, kickstarter adds, find cgeap domain names, top trending seo in this area, favicon, detailed dont leave any part of this discussion out, qa plan, change control, eco coding, no blue light coding, neurodivergent include dyslexia, autism, adhd, ocd, et al any underserved population. Designed with sensitivity. I want to include a nenstral ui to help women feel better and promote confidence duribg this time, healing ui. Please think of a cute trending or seo top searched words in this category. I want to create one api or mcp that includes all this in one tool. Punchy creative cute short names. Can you generate all this in detail. Store it in github midnghtsapphire. Add suggestions abd things to help make ut vetter. Use exrup extreme programming one iteration model to the whole project and generation.

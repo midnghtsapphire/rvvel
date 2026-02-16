@@ -1,7 +1,0 @@
-# Prompt from: Altruistic Multi-Agent Research Framework
-
-Conversation ID: conv_19
-
----
-
-Can you do some deep research and find me some altruistic really really helpful prompts for people with multi-agent sub-agents very detailed based on what people are searching for

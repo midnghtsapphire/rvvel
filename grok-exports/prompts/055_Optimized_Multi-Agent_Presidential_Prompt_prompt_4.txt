@@ -1,7 +1,0 @@
-# Prompt from: Optimized Multi-Agent Presidential Prompt
-
-Conversation ID: conv_55
-
----
-
-Yeah I'm probably adding too much into the prompt but what I'm thinking is that say I ask for I need the best way to balance the deficit and so it runs all the stuff to balance the deficit but while it's doing a search of new AI technology or whatever it detects like a cyber problem that could escalate unrelated to the balancing of the deficit so can I have a prompt bring back multiple pieces of data like that but I need it to just be embedded in the prompt because I'm as a human being can't remember all this stuff. It's a little bit of a fail safe so I guess it should notify me of it should first I guess it's going to have to have a hierarchy it's going to have to check all new AI inventions but not just on the internet like whoever releases it like whatever companies probably all the ones that have their own llm but all that new technology is going to have to like bring that in to see if the proposed answer to the question can be made much better and I need to be able to get maybe the proposal for the balancing the deficit but if there's critical cyber stuff for proposal for the balancing the deficit but if there's critical cyber stuff for like we're

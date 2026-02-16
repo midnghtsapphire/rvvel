@@ -1,7 +1,0 @@
-# Prompt from: Top Clean Shampoo & Conditioner Recommendations
-
-Conversation ID: conv_3
-
----
-
-Create a better promptbfrom the prompr. Do not use best sellers or reviews. Do the research by ingredient lists. Incorpirate this into a new prompt

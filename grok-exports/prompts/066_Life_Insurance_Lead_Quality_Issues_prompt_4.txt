@@ -1,7 +1,0 @@
-# Prompt from: Life Insurance Lead Quality Issues
-
-Conversation ID: conv_66
-
----
-
-So once I get the first sheet the next one would let me know ifones are alreadythere. The ideal thing would be if they we just did Deltas like they all got files at the same time and then it maybe they'd be willing to do it you know like so we can really weed out the duplicates cuz if they're buying them all different times it's going to be based on whoever uploaded their

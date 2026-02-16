@@ -1,7 +1,0 @@
-# Prompt from: Updating AI Threat Detection Paper
-
-Conversation ID: conv_43
-
----
-
-Here's a problem I see that pretty much anything we have is Obsolete and then we make things that are kind of patches and so then we're never really driving from a new system we're always band dating and adding to an existing one so I think that in this kind of research it would it would be a real
