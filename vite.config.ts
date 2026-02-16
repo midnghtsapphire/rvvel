@@ -5,17 +5,24 @@ import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 
-// Conditionally import manus runtime plugin (only available in dev)
+// =============================================================================
+// Production build: NEVER include manus-runtime or debug plugins.
+// Dev only: conditionally import manus runtime plugin.
+// =============================================================================
+const isProduction = process.env.NODE_ENV === "production";
+
 let vitePluginManusRuntime: (() => Plugin) | undefined;
-try {
-  const mod = await import("vite-plugin-manus-runtime");
-  vitePluginManusRuntime = mod.vitePluginManusRuntime;
-} catch {
-  // Not available in CI/production build — that's fine
+if (!isProduction) {
+  try {
+    const mod = await import("vite-plugin-manus-runtime");
+    vitePluginManusRuntime = mod.vitePluginManusRuntime;
+  } catch {
+    // Not available in CI/production build — that's fine
+  }
 }
 
 // =============================================================================
-// Manus Debug Collector - Vite Plugin (dev only)
+// Manus Debug Collector - Vite Plugin (dev only, never in production)
 // Writes browser logs directly to files, trimmed when exceeding size limit
 // =============================================================================
 
@@ -76,7 +83,8 @@ function vitePluginManusDebugCollector(): Plugin {
     name: "manus-debug-collector",
 
     transformIndexHtml(html) {
-      if (process.env.NODE_ENV === "production") {
+      // Never inject debug scripts in production
+      if (isProduction) {
         return html;
       }
       return {
@@ -145,8 +153,9 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-// Build plugin list — only include manus dev plugins when NOT building for production
-const isProduction = process.env.NODE_ENV === "production";
+// =============================================================================
+// Build plugin list — ONLY include manus dev plugins when NOT building for production
+// =============================================================================
 const plugins: Plugin[] = [react(), tailwindcss(), jsxLocPlugin()];
 if (!isProduction) {
   plugins.push(vitePluginManusDebugCollector());

@@ -66,8 +66,27 @@ export default function About() {
 
             {/* Bio Content */}
             <div className="flex-1 space-y-5">
+              {/* Heritage Banner — prominent placement */}
+              <div
+                className="glass-panel-strong px-5 py-4 rounded-xl"
+                style={{
+                  borderColor: "rgba(217, 119, 6, 0.3)",
+                  background: "linear-gradient(135deg, rgba(217, 119, 6, 0.08) 0%, rgba(22, 101, 52, 0.08) 50%, rgba(185, 28, 28, 0.08) 100%)",
+                }}
+              >
+                <p
+                  className="font-serif text-lg md:text-xl font-medium leading-relaxed"
+                  style={{ color: "#f5ede4" }}
+                >
+                  I am{" "}
+                  <span style={{ color: "#d97706" }}>M&#257;ori New Zealander</span>,{" "}
+                  <span style={{ color: "#22c55e" }}>Portuguese</span>,{" "}
+                  <span style={{ color: "#dc2626" }}>Native Hawaiian</span>
+                </p>
+              </div>
+
               <p className="text-warm-200 text-base md:text-lg leading-relaxed">
-                Audrey Evans is a proud and responsible Native Hawaiian with over three decades of
+                Audrey Evans is a proud M&#257;ori New Zealander, Portuguese, and Native Hawaiian woman with over three decades of
                 experience in information technology. Her career spans the full spectrum of the tech
                 industry — from software engineering and database architecture to geospatial engineering,
                 data science, business intelligence, and program/project management.
@@ -82,7 +101,9 @@ export default function About() {
               <p className="text-warm-300 text-base md:text-lg leading-relaxed">
                 Beyond corporate tech, Audrey is an inventor of businesses, biopolymers, biocomposites,
                 bio filaments for 3D printing, and the Manta Explorer — a self-repairing UAS drone. She
-                is a published author on SSRN, a published musician performing as Revvel and Hailstorm,
+                is a published author on SSRN, a published musician performing as{" "}
+                <strong style={{ color: "#dc2626" }}>Audrey Evans</strong> and{" "}
+                <strong style={{ color: "#d97706" }}>Revvel Hail</strong>,
                 a Paralegal De Facto in Colorado, and a CLE instructor/sponsor for the Colorado Supreme
                 Court and Orange County DA Criminal Division.
               </p>
