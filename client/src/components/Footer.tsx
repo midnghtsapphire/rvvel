@@ -1,6 +1,7 @@
 /*
- * Design: Amber Glass Atelier
- * Footer — minimal, warm, with brand links and copyright.
+ * Design: Earth & Canopy
+ * Footer — minimal, warm earthy tones, with brand links and copyright.
+ * NO blue light.
  */
 
 const currentYear = new Date().getFullYear();
@@ -9,12 +10,13 @@ export default function Footer() {
   return (
     <footer
       role="contentinfo"
-      className="border-t border-amber-500/10 py-8 md:py-10"
+      className="py-8 md:py-10"
+      style={{ borderTop: "1px solid rgba(169, 149, 128, 0.1)" }}
     >
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
-            <p className="font-serif text-lg text-amber-400">Audrey Evans</p>
+            <p className="font-serif text-lg" style={{ color: "#dc2626" }}>Audrey Evans</p>
             <p className="text-warm-500 text-xs mt-1">
               &copy; {currentYear} Audrey Evans / GlowStar Labs. All rights reserved.
             </p>
@@ -25,7 +27,7 @@ export default function Footer() {
               href="https://github.com/MIDNGHTSAPPHIRE"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-warm-500 hover:text-amber-400 transition-colors text-sm"
+              className="text-warm-500 hover:text-warm-200 transition-colors text-sm"
               aria-label="GitHub profile"
             >
               GitHub
@@ -34,14 +36,14 @@ export default function Footer() {
               href="https://www.linkedin.com/in/audrey-evans-96a56552/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-warm-500 hover:text-amber-400 transition-colors text-sm"
+              className="text-warm-500 hover:text-warm-200 transition-colors text-sm"
               aria-label="LinkedIn profile"
             >
               LinkedIn
             </a>
             <a
               href="mailto:angelreporters@gmail.com"
-              className="text-warm-500 hover:text-amber-400 transition-colors text-sm"
+              className="text-warm-500 hover:text-warm-200 transition-colors text-sm"
               aria-label="Send email"
             >
               Email
@@ -50,7 +52,7 @@ export default function Footer() {
         </div>
 
         {/* Eco badge */}
-        <div className="mt-6 pt-4 border-t border-amber-500/5 text-center">
+        <div className="mt-6 pt-4 text-center" style={{ borderTop: "1px solid rgba(169, 149, 128, 0.05)" }}>
           <p className="text-warm-600 text-xs">
             Built with carbon efficiency in mind — minimal dependencies, optimized assets, dark theme for OLED power savings.
           </p>

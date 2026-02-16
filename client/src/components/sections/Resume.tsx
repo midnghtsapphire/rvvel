@@ -1,7 +1,8 @@
 /*
- * Design: Amber Glass Atelier
+ * Design: Earth & Canopy
  * Resume section — interactive timeline with glass cards, skill badges, certifications.
- * Warm amber accents, offset vertical timeline line.
+ * Earthy accents: crimson timeline, forest green skill badges, gold cert icons.
+ * NO blue light. WCAG AAA accessible.
  */
 import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
@@ -98,6 +99,12 @@ export default function Resume() {
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<"experience" | "skills" | "certs">("experience");
 
+  const tabStyles = {
+    experience: { active: "#b91c1c", activeBg: "rgba(185, 28, 28, 0.15)", activeBorder: "rgba(185, 28, 28, 0.3)" },
+    skills: { active: "#22c55e", activeBg: "rgba(22, 101, 52, 0.15)", activeBorder: "rgba(22, 101, 52, 0.3)" },
+    certs: { active: "#d97706", activeBg: "rgba(217, 119, 6, 0.15)", activeBorder: "rgba(217, 119, 6, 0.3)" },
+  };
+
   return (
     <section
       id="resume"
@@ -108,7 +115,10 @@ export default function Resume() {
         <div ref={ref} className={`fade-in-section ${isVisible ? "visible" : ""}`}>
           {/* Section Header */}
           <div className="mb-12 md:mb-16">
-            <p className="text-amber-400 font-medium text-sm tracking-widest uppercase mb-2">
+            <p
+              className="font-medium text-sm tracking-widest uppercase mb-2"
+              style={{ color: "#d97706" }}
+            >
               Resume
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-50 mb-4">
@@ -123,32 +133,40 @@ export default function Resume() {
               { id: "experience" as const, label: "Experience", icon: Briefcase },
               { id: "skills" as const, label: "Skills", icon: Code },
               { id: "certs" as const, label: "Certifications", icon: GraduationCap },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                aria-controls={`panel-${tab.id}`}
-                onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  activeTab === tab.id
-                    ? "bg-amber-500/20 text-amber-400 border border-amber-500/30"
-                    : "glass-panel text-warm-400 hover:text-warm-200 hover:bg-white/5"
-                }`}
-              >
-                <tab.icon size={16} />
-                {tab.label}
-              </button>
-            ))}
+            ].map((tab) => {
+              const ts = tabStyles[tab.id];
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`panel-${tab.id}`}
+                  onClick={() => setActiveTab(tab.id)}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
+                  style={
+                    isActive
+                      ? { backgroundColor: ts.activeBg, color: ts.active, border: `1px solid ${ts.activeBorder}` }
+                      : { border: "1px solid transparent" }
+                  }
+                >
+                  <tab.icon size={16} />
+                  {tab.label}
+                </button>
+              );
+            })}
           </div>
 
           {/* Experience Timeline */}
           {activeTab === "experience" && (
             <div id="panel-experience" role="tabpanel" aria-label="Professional experience timeline">
               <div className="relative">
-                {/* Timeline line */}
+                {/* Timeline line — crimson gradient */}
                 <div
-                  className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/40 via-amber-500/20 to-transparent"
+                  className="absolute left-4 md:left-8 top-0 bottom-0 w-px"
+                  style={{
+                    background: "linear-gradient(to bottom, rgba(185, 28, 28, 0.5), rgba(185, 28, 28, 0.2), transparent)",
+                  }}
                   aria-hidden="true"
                 />
 
@@ -158,22 +176,29 @@ export default function Resume() {
                     const isExpanded = expandedIdx === idx;
                     return (
                       <div key={idx} className="relative pl-12 md:pl-20">
-                        {/* Timeline dot */}
+                        {/* Timeline dot — crimson */}
                         <div
-                          className="absolute left-2 md:left-6 top-4 w-4 h-4 rounded-full bg-amber-500/30 border-2 border-amber-500 z-10"
+                          className="absolute left-2 md:left-6 top-4 w-4 h-4 rounded-full z-10"
+                          style={{
+                            backgroundColor: "rgba(185, 28, 28, 0.3)",
+                            border: "2px solid #b91c1c",
+                          }}
                           aria-hidden="true"
                         />
 
                         <button
                           onClick={() => setExpandedIdx(isExpanded ? null : idx)}
                           aria-expanded={isExpanded}
-                          className="w-full text-left glass-panel p-5 md:p-6 hover:bg-white/[0.08] transition-all duration-200 group"
+                          className="w-full text-left glass-panel p-5 md:p-6 hover:bg-white/[0.06] transition-all duration-200 group"
                         >
                           <div className="flex items-start justify-between gap-4">
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-1">
-                                <Icon size={16} className="text-amber-500" aria-hidden="true" />
-                                <span className="text-amber-400/80 text-xs md:text-sm font-medium">
+                                <Icon size={16} style={{ color: "#b91c1c" }} aria-hidden="true" />
+                                <span
+                                  className="text-xs md:text-sm font-medium"
+                                  style={{ color: "rgba(220, 38, 38, 0.8)" }}
+                                >
                                   {item.period}
                                 </span>
                               </div>
@@ -182,7 +207,7 @@ export default function Resume() {
                               </h3>
                               <p className="text-warm-400 text-sm">{item.company}</p>
                             </div>
-                            <span className="text-warm-500 group-hover:text-amber-400 transition-colors mt-1" aria-hidden="true">
+                            <span className="text-warm-500 group-hover:text-crimson-500 transition-colors mt-1" aria-hidden="true">
                               {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                             </span>
                           </div>
@@ -206,14 +231,21 @@ export default function Resume() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {skills.map((group) => (
                   <div key={group.category} className="glass-panel p-6">
-                    <h3 className="text-amber-400 font-semibold text-base mb-4">
+                    <h3
+                      className="font-semibold text-base mb-4"
+                      style={{ color: "#22c55e" }}
+                    >
                       {group.category}
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {group.items.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1.5 text-xs md:text-sm font-medium text-warm-200 bg-amber-500/10 border border-amber-500/20 rounded-md"
+                          className="px-3 py-1.5 text-xs md:text-sm font-medium text-warm-200 rounded-md"
+                          style={{
+                            backgroundColor: "rgba(22, 101, 52, 0.15)",
+                            border: "1px solid rgba(22, 163, 74, 0.2)",
+                          }}
                         >
                           {skill}
                         </span>
@@ -224,14 +256,21 @@ export default function Resume() {
 
                 {/* Additional info */}
                 <div className="glass-panel p-6 md:col-span-2">
-                  <h3 className="text-amber-400 font-semibold text-base mb-4">
-                    Compliance & Governance
+                  <h3
+                    className="font-semibold text-base mb-4"
+                    style={{ color: "#22c55e" }}
+                  >
+                    Compliance &amp; Governance
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {["SOX", "SOC", "IT Governance", "Waterfall", "RUP", "XP"].map((item) => (
                       <span
                         key={item}
-                        className="px-3 py-1.5 text-xs md:text-sm font-medium text-warm-200 bg-amber-500/10 border border-amber-500/20 rounded-md"
+                        className="px-3 py-1.5 text-xs md:text-sm font-medium text-warm-200 rounded-md"
+                        style={{
+                          backgroundColor: "rgba(22, 101, 52, 0.15)",
+                          border: "1px solid rgba(22, 163, 74, 0.2)",
+                        }}
                       >
                         {item}
                       </span>
@@ -251,7 +290,7 @@ export default function Resume() {
                     key={idx}
                     className="glass-panel p-4 md:p-5 flex items-start gap-3"
                   >
-                    <Award size={18} className="text-amber-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <Award size={18} style={{ color: "#d97706" }} className="flex-shrink-0 mt-0.5" aria-hidden="true" />
                     <span className="text-warm-200 text-sm md:text-base">{cert}</span>
                   </div>
                 ))}

@@ -1,13 +1,11 @@
 /*
- * Design: Amber Glass Atelier
+ * Design: Earth & Canopy
  * Portfolio section — glass cards for each app in the ecosystem.
- * Tech pattern background, warm amber accents. Placeholder links for now.
+ * Forest green accents for tech/innovation. NO blue light.
  */
 import { useInView } from "@/hooks/useInView";
 import { ExternalLink, Sparkles, FileText, Router, Mail, BarChart3 } from "lucide-react";
 import { toast } from "sonner";
-
-const TECH_BG = "https://private-us-east-1.manuscdn.com/sessionFile/x4BxLyx19pDLdlci38lXjR/sandbox/jdvSFsOCL7DD4VSFYX6xJK-img-4_1771202609000_na1fn_dGVjaC1wYXR0ZXJu.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUveDRCeEx5eDE5cERMZGxjaTM4bFhqUi9zYW5kYm94L2pkdlNGc09DTDdERDRWU0ZZWDZ4SkstaW1nLTRfMTc3MTIwMjYwOTAwMF9uYTFmbl9kR1ZqYUMxd1lYUjBaWEp1LmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=GRT5nIq8A9pF7jdZ52FNzpBJD0DXJ2rbZTV41Exx-DnisDMhIjLNV~V5tgzlyeTs9YfMESpLNUFHHNdGhtGtzLj4aC0agTzoUXuLi1sb6HP3LPsHe-Lte4PFBN20hUtfBkj~wUKq1UT8O0WtPj3M2q1JEtpZICNmFD-DnWtJfTctH3f7ZKfwvaekS6yGO-GO5Zgp8IqfQxy1IlRdRlpPi-Eyfai7tPYU42v10hd270gweRbKlRS2l-sAhyJdwbQpogz8MDcHJ3rTYZ3gPQj6W-v2FyGS-qs0hJukXNt-90N5~IlZZi4rY5hDup39WZpq0F0CZD9WiOxmcEgvRTWM-w__";
 
 const apps = [
   {
@@ -60,23 +58,26 @@ export default function Portfolio() {
       aria-label="Portfolio and applications"
       className="relative py-20 md:py-28 overflow-hidden"
     >
-      {/* Background */}
+      {/* Subtle background texture */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={TECH_BG}
-          alt=""
-          role="presentation"
-          className="w-full h-full object-cover opacity-10"
-          loading="lazy"
+        <div
+          className="w-full h-full opacity-[0.03]"
+          style={{
+            background:
+              "radial-gradient(ellipse at 30% 50%, rgba(22, 101, 52, 0.5) 0%, transparent 50%), radial-gradient(ellipse at 70% 50%, rgba(185, 28, 28, 0.3) 0%, transparent 50%)",
+          }}
+          aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
 
       <div className="container relative z-10">
         <div ref={ref} className={`fade-in-section ${isVisible ? "visible" : ""}`}>
           {/* Section Header */}
           <div className="mb-12 md:mb-16">
-            <p className="text-amber-400 font-medium text-sm tracking-widest uppercase mb-2">
+            <p
+              className="font-medium text-sm tracking-widest uppercase mb-2"
+              style={{ color: "#15803d" }}
+            >
               Portfolio
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-50 mb-4">
@@ -97,15 +98,19 @@ export default function Portfolio() {
                 <button
                   key={app.name}
                   onClick={() => handleAppClick(app.name)}
-                  className="glass-panel p-6 text-left group hover:bg-white/[0.08] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-900/10"
+                  className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  style={{ boxShadow: "0 4px 20px rgba(22, 101, 52, 0.05)" }}
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-amber-500/15 flex items-center justify-center">
-                      <Icon size={20} className="text-amber-400" aria-hidden="true" />
+                    <div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center"
+                      style={{ backgroundColor: "rgba(22, 101, 52, 0.15)" }}
+                    >
+                      <Icon size={20} style={{ color: "#22c55e" }} aria-hidden="true" />
                     </div>
                     <ExternalLink
                       size={16}
-                      className="text-warm-600 group-hover:text-amber-400 transition-colors"
+                      className="text-warm-600 group-hover:text-forest-500 transition-colors"
                       aria-hidden="true"
                     />
                   </div>
@@ -119,14 +124,22 @@ export default function Portfolio() {
                     {app.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs text-amber-400/80 bg-amber-500/10 rounded"
+                        className="px-2 py-1 text-xs rounded"
+                        style={{
+                          color: "rgba(34, 197, 94, 0.8)",
+                          backgroundColor: "rgba(22, 101, 52, 0.12)",
+                        }}
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                   <span className="inline-flex items-center gap-1.5 text-xs font-medium text-warm-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500/60" aria-hidden="true" />
+                    <span
+                      className="w-1.5 h-1.5 rounded-full"
+                      style={{ backgroundColor: "rgba(34, 197, 94, 0.6)" }}
+                      aria-hidden="true"
+                    />
                     {app.status}
                   </span>
                 </button>
@@ -140,7 +153,7 @@ export default function Portfolio() {
               href="https://github.com/MIDNGHTSAPPHIRE"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 glass-panel text-warm-300 hover:text-amber-400 hover:bg-white/[0.08] transition-all duration-200 text-sm font-medium"
+              className="inline-flex items-center gap-2 px-5 py-2.5 glass-panel text-warm-300 hover:text-forest-400 hover:bg-white/[0.06] transition-all duration-200 text-sm font-medium"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />

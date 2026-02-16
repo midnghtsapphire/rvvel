@@ -1,10 +1,11 @@
 /*
- * Design: Amber Glass Atelier
- * About section — full bio with secondary photo. Glass panels, warm amber accents.
+ * Design: Earth & Canopy
+ * About section — full bio with secondary photo. Earthy glass panels, crimson/green/gold accents.
+ * NO blue light. WCAG AAA accessible.
  */
 import { useInView } from "@/hooks/useInView";
 
-const SECONDARY_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032705003/jxxwYcKDntcRofOG.jpeg";
+const SECONDARY_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032705003/NLYAnKrlUHPmCagF.jpeg";
 
 const highlights = [
   { label: "Years in IT", value: "30+" },
@@ -22,11 +23,11 @@ export default function About() {
       aria-label="About Audrey Evans"
       className="relative py-20 md:py-28"
     >
-      {/* Subtle ambient glow */}
+      {/* Subtle ambient glow — forest green */}
       <div
-        className="absolute top-0 right-0 w-[500px] h-[500px] opacity-10 pointer-events-none"
+        className="absolute top-0 right-0 w-[500px] h-[500px] opacity-[0.06] pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(234, 88, 12, 0.3) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(22, 101, 52, 0.4) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -38,7 +39,10 @@ export default function About() {
         >
           {/* Section Header */}
           <div className="mb-12 md:mb-16">
-            <p className="text-amber-400 font-medium text-sm tracking-widest uppercase mb-2">
+            <p
+              className="font-medium text-sm tracking-widest uppercase mb-2"
+              style={{ color: "#22c55e" }}
+            >
               About Me
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-50 mb-4">
@@ -48,12 +52,12 @@ export default function About() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
-            {/* Photo Column */}
+            {/* Photo Column — blue dress, mountain backdrop */}
             <div className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
-              <div className="relative w-56 h-72 md:w-64 md:h-80 rounded-xl overflow-hidden glass-panel shadow-xl shadow-amber-900/10">
+              <div className="relative w-56 h-72 md:w-64 md:h-80 rounded-xl overflow-hidden glass-panel shadow-xl" style={{ boxShadow: "0 10px 40px rgba(22, 101, 52, 0.1)" }}>
                 <img
                   src={SECONDARY_PHOTO}
-                  alt="Audrey Evans in a purple sequin and satin gown against a mountain sunset"
+                  alt="Audrey Evans in a blue dress against a mountain sunset backdrop — professional portrait"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
@@ -89,21 +93,34 @@ export default function About() {
                 awareness, and homelessness — her mission is clear: rescue, retrain, reinvent, and restore.
               </p>
 
-              {/* Stats Grid */}
+              {/* Stats Grid — earthy glass with alternating accent colors */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-                {highlights.map((item) => (
-                  <div
-                    key={item.label}
-                    className="glass-panel p-4 text-center"
-                  >
-                    <div className="font-serif text-2xl md:text-3xl text-amber-400 mb-1">
-                      {item.value}
+                {highlights.map((item, idx) => {
+                  const colors = [
+                    { text: "#dc2626", bg: "rgba(185, 28, 28, 0.1)", border: "rgba(185, 28, 28, 0.2)" },
+                    { text: "#22c55e", bg: "rgba(22, 101, 52, 0.1)", border: "rgba(22, 101, 52, 0.2)" },
+                    { text: "#d97706", bg: "rgba(217, 119, 6, 0.1)", border: "rgba(217, 119, 6, 0.2)" },
+                    { text: "#dc2626", bg: "rgba(185, 28, 28, 0.1)", border: "rgba(185, 28, 28, 0.2)" },
+                  ];
+                  const c = colors[idx % colors.length];
+                  return (
+                    <div
+                      key={item.label}
+                      className="glass-panel p-4 text-center"
+                      style={{ borderColor: c.border, background: c.bg }}
+                    >
+                      <div
+                        className="font-serif text-2xl md:text-3xl mb-1"
+                        style={{ color: c.text }}
+                      >
+                        {item.value}
+                      </div>
+                      <div className="text-warm-400 text-xs md:text-sm font-medium">
+                        {item.label}
+                      </div>
                     </div>
-                    <div className="text-warm-400 text-xs md:text-sm font-medium">
-                      {item.label}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 /*
- * Design: Amber Glass Atelier
- * Glassmorphism navbar with warm amber accents, no blue.
- * Sticky top nav with frosted glass effect.
+ * Design: Earth & Canopy
+ * Glassmorphism navbar with earthy warm accents — crimson, forest green, gold.
+ * Sticky top nav with frosted glass effect. NO blue light.
  */
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -39,19 +39,23 @@ export default function Navbar() {
       aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass-panel-strong shadow-lg shadow-amber-900/10"
+          ? "glass-panel-strong shadow-lg"
           : "bg-transparent"
       }`}
+      style={scrolled ? { boxShadow: "0 4px 20px rgba(26, 21, 16, 0.5)" } : undefined}
     >
       <div className="container flex items-center justify-between h-16 md:h-18">
-        {/* Logo / Name */}
+        {/* Logo / Name — crimson accent */}
         <a
           href="#hero"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="font-serif text-xl md:text-2xl text-amber-400 hover:text-amber-300 transition-colors duration-200"
+          className="font-serif text-xl md:text-2xl transition-colors duration-200"
+          style={{ color: "#dc2626" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#ef4444")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "#dc2626")}
           aria-label="Scroll to top"
         >
           Audrey Evans
@@ -67,7 +71,7 @@ export default function Navbar() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="px-3 py-2 text-sm font-medium text-warm-200 hover:text-amber-400 transition-colors duration-200 rounded-md hover:bg-white/5"
+                className="px-3 py-2 text-sm font-medium text-warm-200 hover:text-warm-50 transition-colors duration-200 rounded-md hover:bg-white/5"
               >
                 {link.label}
               </a>
@@ -78,7 +82,8 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-warm-200 hover:text-amber-400 transition-colors"
+          className="md:hidden p-2 text-warm-200 transition-colors"
+          style={{ color: isOpen ? "#dc2626" : undefined }}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -91,7 +96,8 @@ export default function Navbar() {
       {isOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden glass-panel-strong border-t border-amber-500/10"
+          className="md:hidden glass-panel-strong"
+          style={{ borderTop: "1px solid rgba(169, 149, 128, 0.1)" }}
           role="menu"
         >
           <ul className="container py-4 space-y-1" role="list">
@@ -103,7 +109,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="block px-4 py-3 text-base font-medium text-warm-200 hover:text-amber-400 hover:bg-white/5 rounded-lg transition-colors duration-200"
+                  className="block px-4 py-3 text-base font-medium text-warm-200 hover:text-warm-50 hover:bg-white/5 rounded-lg transition-colors duration-200"
                 >
                   {link.label}
                 </a>

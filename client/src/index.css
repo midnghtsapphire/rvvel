@@ -40,67 +40,116 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* Warm amber palette — NO BLUE */
-  --color-amber-50: oklch(0.987 0.022 85);
-  --color-amber-100: oklch(0.962 0.059 85);
-  --color-amber-200: oklch(0.924 0.12 85);
-  --color-amber-300: oklch(0.879 0.169 75);
-  --color-amber-400: oklch(0.828 0.189 68);
-  --color-amber-500: oklch(0.769 0.188 60);
-  --color-amber-600: oklch(0.666 0.179 46);
-  --color-amber-700: oklch(0.555 0.163 39);
-  --color-amber-800: oklch(0.473 0.137 39);
-  --color-amber-900: oklch(0.414 0.112 39);
-  --color-warm-50: oklch(0.98 0.005 60);
-  --color-warm-100: oklch(0.95 0.01 60);
-  --color-warm-200: oklch(0.88 0.02 60);
-  --color-warm-300: oklch(0.78 0.04 60);
-  --color-warm-400: oklch(0.68 0.06 55);
-  --color-warm-500: oklch(0.58 0.07 50);
-  --color-warm-600: oklch(0.48 0.06 45);
-  --color-warm-700: oklch(0.38 0.04 40);
-  --color-warm-800: oklch(0.25 0.02 40);
-  --color-warm-900: oklch(0.18 0.015 40);
-  --color-warm-950: oklch(0.12 0.01 40);
+
+  /* ═══════════════════════════════════════════════════
+     EARTHY PALETTE — Red earth, green leaves, golden light
+     NO BLUE anywhere. Warm, grounded, natural.
+     ═══════════════════════════════════════════════════ */
+
+  /* Deep Reds / Warm Crimson */
+  --color-crimson-50: #fef2f2;
+  --color-crimson-100: #fee2e2;
+  --color-crimson-200: #fecaca;
+  --color-crimson-300: #fca5a5;
+  --color-crimson-400: #f87171;
+  --color-crimson-500: #ef4444;
+  --color-crimson-600: #dc2626;
+  --color-crimson-700: #b91c1c;
+  --color-crimson-800: #991b1b;
+  --color-crimson-900: #7f1d1d;
+
+  /* Forest Greens / Leaf Greens */
+  --color-forest-50: #f0fdf4;
+  --color-forest-100: #dcfce7;
+  --color-forest-200: #bbf7d0;
+  --color-forest-300: #86efac;
+  --color-forest-400: #4ade80;
+  --color-forest-500: #22c55e;
+  --color-forest-600: #16a34a;
+  --color-forest-700: #15803d;
+  --color-forest-800: #166534;
+  --color-forest-900: #14532d;
+
+  /* Earth Tones / Warm Browns */
+  --color-earth-50: #fefce8;
+  --color-earth-100: #fef9c3;
+  --color-earth-200: #fef08a;
+  --color-earth-300: #fde047;
+  --color-earth-400: #d4a017;
+  --color-earth-500: #a16207;
+  --color-earth-600: #92400e;
+  --color-earth-700: #78350f;
+  --color-earth-800: #5c2d0e;
+  --color-earth-900: #3d1f0d;
+
+  /* Gold / Amber Accents */
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  --color-gold-700: #b45309;
+  --color-gold-800: #92400e;
+  --color-gold-900: #78350f;
+
+  /* Warm Neutrals (warm charcoal, NOT blue-tinted) */
+  --color-warm-50: #faf5f0;
+  --color-warm-100: #f5ede4;
+  --color-warm-200: #e8ddd0;
+  --color-warm-300: #c9b9a6;
+  --color-warm-400: #a89580;
+  --color-warm-500: #8a7560;
+  --color-warm-600: #6b5a48;
+  --color-warm-700: #4d4035;
+  --color-warm-800: #332b23;
+  --color-warm-900: #231e18;
+  --color-warm-950: #171310;
+
   --font-sans: 'DM Sans', system-ui, sans-serif;
   --font-serif: 'DM Serif Display', Georgia, serif;
 }
 
-/* Dark warm theme — the ONLY theme (no blue anywhere) */
+/* Dark warm earthy theme — the ONLY theme (no blue anywhere) */
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.14 0.012 50);
-  --foreground: oklch(0.93 0.01 75);
-  --card: oklch(0.18 0.012 50 / 60%);
-  --card-foreground: oklch(0.93 0.01 75);
-  --popover: oklch(0.2 0.015 50);
-  --popover-foreground: oklch(0.93 0.01 75);
-  --primary: oklch(0.769 0.188 60);
-  --primary-foreground: oklch(0.15 0.01 50);
-  --secondary: oklch(0.22 0.015 50);
-  --secondary-foreground: oklch(0.85 0.02 70);
-  --muted: oklch(0.22 0.012 50);
-  --muted-foreground: oklch(0.65 0.03 60);
-  --accent: oklch(0.666 0.179 46);
-  --accent-foreground: oklch(0.98 0.01 75);
-  --destructive: oklch(0.577 0.2 27);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.35 0.02 55 / 30%);
-  --input: oklch(0.3 0.015 50 / 40%);
-  --ring: oklch(0.769 0.188 60);
-  --chart-1: oklch(0.828 0.189 68);
-  --chart-2: oklch(0.769 0.188 60);
-  --chart-3: oklch(0.666 0.179 46);
-  --chart-4: oklch(0.555 0.163 39);
-  --chart-5: oklch(0.473 0.137 39);
-  --sidebar: oklch(0.16 0.012 50);
-  --sidebar-foreground: oklch(0.93 0.01 75);
-  --sidebar-primary: oklch(0.769 0.188 60);
-  --sidebar-primary-foreground: oklch(0.15 0.01 50);
-  --sidebar-accent: oklch(0.22 0.015 50);
-  --sidebar-accent-foreground: oklch(0.93 0.01 75);
-  --sidebar-border: oklch(0.35 0.02 55 / 30%);
-  --sidebar-ring: oklch(0.769 0.188 60);
+  /* Deep dark earth/charcoal background — warm, NOT blue, NOT pure black */
+  --background: #1a1510;
+  --foreground: #f5ede4;
+  --card: rgba(51, 43, 35, 0.6);
+  --card-foreground: #f5ede4;
+  --popover: #2a2219;
+  --popover-foreground: #f5ede4;
+  /* Primary = Deep crimson red */
+  --primary: #dc2626;
+  --primary-foreground: #fef2f2;
+  /* Secondary = Forest green */
+  --secondary: #166534;
+  --secondary-foreground: #dcfce7;
+  --muted: #2a2219;
+  --muted-foreground: #a89580;
+  /* Accent = Gold/amber */
+  --accent: #d97706;
+  --accent-foreground: #fef3c7;
+  --destructive: #b91c1c;
+  --destructive-foreground: #fef2f2;
+  --border: rgba(169, 149, 128, 0.2);
+  --input: rgba(77, 64, 53, 0.4);
+  --ring: #dc2626;
+  --chart-1: #dc2626;
+  --chart-2: #22c55e;
+  --chart-3: #d97706;
+  --chart-4: #b91c1c;
+  --chart-5: #15803d;
+  --sidebar: #1e1812;
+  --sidebar-foreground: #f5ede4;
+  --sidebar-primary: #dc2626;
+  --sidebar-primary-foreground: #fef2f2;
+  --sidebar-accent: #2a2219;
+  --sidebar-accent-foreground: #f5ede4;
+  --sidebar-border: rgba(169, 149, 128, 0.2);
+  --sidebar-ring: #dc2626;
 }
 
 @layer base {
@@ -181,24 +230,47 @@
     }
   }
 
-  /* Glassmorphism panel */
+  /* ═══════════════════════════════════════════════════
+     GLASSMORPHISM — Earthy warm tints
+     ═══════════════════════════════════════════════════ */
+
+  /* Standard glass panel — warm earthy tint */
   .glass-panel {
-    background: rgba(255, 245, 235, 0.06);
+    background: rgba(51, 43, 35, 0.45);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(251, 191, 36, 0.12);
+    border: 1px solid rgba(169, 149, 128, 0.15);
     border-radius: var(--radius);
   }
 
+  /* Strong glass panel — more opaque, warmer */
   .glass-panel-strong {
-    background: rgba(255, 245, 235, 0.1);
+    background: rgba(51, 43, 35, 0.65);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(251, 191, 36, 0.18);
+    border: 1px solid rgba(169, 149, 128, 0.22);
     border-radius: var(--radius);
   }
 
-  /* Ambient glow effect */
+  /* Glass panel with crimson tint */
+  .glass-panel-crimson {
+    background: rgba(127, 29, 29, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(220, 38, 38, 0.15);
+    border-radius: var(--radius);
+  }
+
+  /* Glass panel with forest green tint */
+  .glass-panel-forest {
+    background: rgba(20, 83, 45, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(22, 163, 74, 0.15);
+    border-radius: var(--radius);
+  }
+
+  /* Ambient glow effect — warm earth glow */
   .ambient-glow {
     position: relative;
   }
@@ -206,7 +278,7 @@
     content: '';
     position: absolute;
     inset: -60px;
-    background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(185, 28, 28, 0.06) 0%, rgba(217, 119, 6, 0.04) 40%, transparent 70%);
     pointer-events: none;
     z-index: -1;
   }
@@ -222,9 +294,15 @@
     transform: translateY(0);
   }
 
-  /* Warm gold accent line */
+  /* Gold accent line — warm gold gradient */
   .gold-line {
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), transparent);
+    background: linear-gradient(90deg, transparent, rgba(217, 119, 6, 0.6), transparent);
+  }
+
+  /* Earthy divider — red to green gradient */
+  .earth-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(185, 28, 28, 0.4), rgba(217, 119, 6, 0.5), rgba(22, 101, 52, 0.4), transparent);
   }
 }

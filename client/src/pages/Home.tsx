@@ -1,7 +1,7 @@
 /*
- * Design: Amber Glass Atelier — Luxe Glassmorphism
+ * Design: Earth & Canopy — Grounded Glassmorphism
  * Home page — single-page hub assembling all sections.
- * Warm amber/orange dark theme, no blue anywhere.
+ * Warm earthy dark theme: deep reds, forest greens, gold accents. No blue anywhere.
  * WCAG AAA accessible, neurodivergent-friendly, carbon-efficient.
  */
 import Navbar from "@/components/Navbar";
@@ -20,7 +20,8 @@ export default function Home() {
       {/* Skip to main content link for screen readers */}
       <a
         href="#main-content"
-        className="skip-link bg-amber-500 text-warm-950 font-semibold text-sm rounded-b-md"
+        className="skip-link font-semibold text-sm rounded-b-md"
+        style={{ backgroundColor: "#b91c1c", color: "#fef2f2" }}
       >
         Skip to main content
       </a>
@@ -30,28 +31,28 @@ export default function Home() {
       <main id="main-content" role="main">
         <Hero />
 
-        {/* Gold divider */}
-        <div className="gold-line" aria-hidden="true" />
+        {/* Earth divider — red to green gradient */}
+        <div className="earth-line" aria-hidden="true" />
 
         <About />
 
-        <div className="gold-line" aria-hidden="true" />
+        <div className="earth-line" aria-hidden="true" />
 
         <Resume />
 
-        <div className="gold-line" aria-hidden="true" />
+        <div className="earth-line" aria-hidden="true" />
 
         <Portfolio />
 
-        <div className="gold-line" aria-hidden="true" />
+        <div className="earth-line" aria-hidden="true" />
 
         <MusicSection />
 
-        <div className="gold-line" aria-hidden="true" />
+        <div className="earth-line" aria-hidden="true" />
 
         <Advocacy />
 
-        <div className="gold-line" aria-hidden="true" />
+        <div className="earth-line" aria-hidden="true" />
 
         <Contact />
       </main>
