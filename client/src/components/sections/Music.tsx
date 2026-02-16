@@ -8,7 +8,7 @@
 import { useInView } from "@/hooks/useInView";
 import { Music2, Headphones, ExternalLink, Disc3, TrendingUp, Mic2 } from "lucide-react";
 
-const MUSIC_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032705003/UkBAvqxgFYMhSRBc.jpeg";
+const MUSIC_PHOTO = "/audrey-stage.png";
 
 export default function MusicSection() {
   const { ref, isVisible } = useInView();
@@ -62,7 +62,7 @@ export default function MusicSection() {
               >
                 <img
                   src={MUSIC_PHOTO}
-                  alt="Audrey Evans in a purple sequin and satin gown against a mountain sunset — artist portrait for Revvel music brand"
+                  alt="Audrey Evans on a dramatic smoky stage — blonde curly hair, floral dress, silver boots, bathed in stage lighting"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />

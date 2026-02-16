@@ -6,7 +6,7 @@
  */
 import { ChevronDown } from "lucide-react";
 
-const PRIMARY_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032705003/qdMaXUWQoLkEfvtn.png";
+const PRIMARY_PHOTO = "/hero-audrey.png";
 
 export default function Hero() {
   return (
@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src={PRIMARY_PHOTO}
-          alt="Audrey Evans on a dramatic smoky stage — blonde curly hair, floral dress, silver boots, bathed in stage lighting"
+          alt="Audrey Evans — blonde curly hair, red shirt, jeans, sitting in a tree outdoors with natural lighting"
           className="w-full h-full object-cover object-top"
           loading="eager"
         />
