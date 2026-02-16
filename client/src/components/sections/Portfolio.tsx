@@ -36,9 +36,9 @@ const apps = [
     name: "Revvel Email Organizer",
     description: "AI-powered email categorization system that brings order to chaotic inboxes with smart filtering and priority management.",
     icon: Mail,
-    status: "Live",
+    status: "In Development",
     tags: ["AI", "Email", "Productivity"],
-    liveUrl: "https://midnghtsapphire.github.io/revvel-email-organizer/",
+    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/revvel-email-organizer",
   },
   {
     name: "AI Benchmarking Tool",
