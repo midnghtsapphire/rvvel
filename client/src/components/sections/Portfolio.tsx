@@ -5,9 +5,38 @@
  * Links point to LIVE GitHub Pages URLs, not repo URLs.
  */
 import { useInView } from "@/hooks/useInView";
-import { ExternalLink, Sparkles, FileText, Router, Mail, BarChart3, Link as LinkIcon } from "lucide-react";
+import { 
+  ExternalLink, 
+  Sparkles, 
+  FileText, 
+  Router, 
+  Mail, 
+  BarChart3, 
+  Link as LinkIcon, 
+  Dog, 
+  Brain,
+  Eye,
+  Leaf,
+  Zap
+} from "lucide-react";
 
 const apps = [
+  {
+    name: "PawSitting",
+    description: "Professional pet sitting and animal care management platform. Streamlining scheduling, client updates, and care tracking for furry friends.",
+    icon: Dog,
+    status: "Live",
+    tags: ["Animal Care", "Management", "Service"],
+    liveUrl: "https://midnghtsapphire.github.io/Pawsitting/",
+  },
+  {
+    name: "MindMappr",
+    description: "Intelligent cognitive mapping and brainstorming tool. Visualize complex ideas and automate workflows through AI-powered node generation.",
+    icon: Brain,
+    status: "Live",
+    tags: ["AI", "Cognitive", "Productivity"],
+    liveUrl: "https://midnghtsapphire.github.io/mindmappr/",
+  },
   {
     name: "TheAltText",
     description: "Automated alt text generator that makes images accessible for screen readers, powered by AI image recognition.",
@@ -38,7 +67,7 @@ const apps = [
     icon: Mail,
     status: "Live",
     tags: ["AI", "Email", "Productivity"],
-    liveUrl: "https://3000-iu1pleeznhnlol7ibl7vm-16b14045.us2.manus.computer",
+    liveUrl: "https://midnghtsapphire.github.io/revvel-email-organizer/",
   },
   {
     name: "AI Benchmarking Tool",
@@ -55,6 +84,30 @@ const apps = [
     status: "In Development",
     tags: ["MCP", "Affiliate", "Revenue"],
     liveUrl: "https://github.com/MIDNGHTSAPPHIRE/rvvel-affiliate-links-mcp",
+  },
+];
+
+const accessibilityModes = [
+  {
+    name: "Neurodivergent",
+    description: "High-contrast, reduced animation, and dyslexia-friendly typography designed for cognitive ease.",
+    icon: Brain,
+    color: "#d97706",
+    bg: "rgba(217, 119, 6, 0.12)",
+  },
+  {
+    name: "ECO CODE",
+    description: "Optimized for carbon efficiency with minimal asset loading and dark-mode power savings.",
+    icon: Leaf,
+    color: "#22c55e",
+    bg: "rgba(22, 101, 52, 0.12)",
+  },
+  {
+    name: "No Blue Light",
+    description: "Warm-spectrum palette eliminating blue light frequencies to reduce eye strain and support circadian health.",
+    icon: Eye,
+    color: "#dc2626",
+    bg: "rgba(185, 28, 28, 0.12)",
   },
 ];
 
@@ -97,6 +150,32 @@ export default function Portfolio() {
               ecosystem. Click any card to view the live application.
             </p>
             <div className="gold-line w-24 mt-4" />
+          </div>
+
+          {/* Accessibility Modes Display */}
+          <div className="mb-16">
+            <h3 className="text-warm-200 font-serif text-2xl mb-6">Priority Accessibility Modes</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {accessibilityModes.map((mode) => {
+                const Icon = mode.icon;
+                return (
+                  <div 
+                    key={mode.name}
+                    className="glass-panel p-6 flex flex-col gap-3"
+                    style={{ borderColor: "rgba(169, 149, 128, 0.1)" }}
+                  >
+                    <div 
+                      className="w-10 h-10 rounded-lg flex items-center justify-center"
+                      style={{ backgroundColor: mode.bg }}
+                    >
+                      <Icon size={20} style={{ color: mode.color }} />
+                    </div>
+                    <h4 className="text-warm-100 font-semibold">{mode.name}</h4>
+                    <p className="text-warm-400 text-sm leading-relaxed">{mode.description}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* App Cards Grid */}
