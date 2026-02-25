@@ -180,7 +180,7 @@ export default function MusicSection() {
                   <ExternalLink size={14} aria-hidden="true" />
                 </a>
                 <a
-                  href="https://music.apple.com/us/artist/audrey-evans"
+                  href="https://music.apple.com/us/artist/audrey-evans/1825732282"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-medium text-sm transition-all duration-200 hover:scale-[1.02]"

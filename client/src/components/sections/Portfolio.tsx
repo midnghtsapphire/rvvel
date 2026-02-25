@@ -2,7 +2,7 @@
  * Design: Earth & Canopy
  * Portfolio section — glass cards for each app in the ecosystem.
  * Forest green accents for tech/innovation. NO blue light.
- * Links point to LIVE GitHub Pages URLs, not repo URLs.
+ * Links: GitHub Pages for public repos; GitHub repo URLs for private repos.
  */
 import { useInView } from "@/hooks/useInView";
 import { 
@@ -27,7 +27,8 @@ const apps = [
     icon: Dog,
     status: "Live",
     tags: ["Animal Care", "Management", "Service"],
-    liveUrl: "https://midnghtsapphire.github.io/Pawsitting/",
+    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/Pawsitting",
+    dividerBefore: true,
   },
   {
     name: "MindMappr",
@@ -35,7 +36,7 @@ const apps = [
     icon: Brain,
     status: "Live",
     tags: ["AI", "Cognitive", "Productivity"],
-    liveUrl: "https://midnghtsapphire.github.io/mindmappr/",
+    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/mindmappr",
   },
   {
     name: "TheAltText",
@@ -73,9 +74,9 @@ const apps = [
     name: "AI Benchmarking Tool",
     description: "Comprehensive benchmarking suite for evaluating and comparing AI model performance across standardized metrics.",
     icon: BarChart3,
-    status: "Live",
+    status: "In Development",
     tags: ["AI", "Analytics", "Research"],
-    liveUrl: "https://midnghtsapphire.github.io/ai-benchmarking-tool/",
+    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/ai-benchmarking-tool",
   },
   {
     name: "Affiliate Links",
@@ -235,16 +236,31 @@ export default function Portfolio() {
               );
 
               return (
-                <a
-                  key={app.name}
-                  href={app.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg block"
-                  style={{ boxShadow: "0 4px 20px rgba(22, 101, 52, 0.05)" }}
-                >
-                  {cardContent}
-                </a>
+                <div key={app.name} className="contents">
+                  {app.dividerBefore && (
+                    <div
+                      className="col-span-1 md:col-span-2 lg:col-span-3"
+                      aria-hidden="true"
+                    >
+                      <hr
+                        style={{
+                          border: "none",
+                          borderTop: "1px solid rgba(169, 149, 128, 0.18)",
+                          margin: "0.25rem 0",
+                        }}
+                      />
+                    </div>
+                  )}
+                  <a
+                    href={app.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg block"
+                    style={{ boxShadow: "0 4px 20px rgba(22, 101, 52, 0.05)" }}
+                  >
+                    {cardContent}
+                  </a>
+                </div>
               );
             })}
           </div>
