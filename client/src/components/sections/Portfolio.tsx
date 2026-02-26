@@ -2,7 +2,7 @@
  * Design: Earth & Canopy
  * Portfolio section — glass cards for each app in the ecosystem.
  * Forest green accents for tech/innovation. NO blue light.
- * Links: Live deployed apps on droplet; GitHub repo URLs for apps not yet live.
+ * Links: Live deployed apps on droplet; affiliate partner URLs for affiliate cards.
  */
 import { useInView } from "@/hooks/useInView";
 import { 
@@ -19,7 +19,8 @@ import {
   Leaf,
   Zap,
   Star,
-  Search
+  Search,
+  DollarSign
 } from "lucide-react";
 
 const apps = [
@@ -38,7 +39,7 @@ const apps = [
     icon: Brain,
     status: "Live",
     tags: ["AI", "Cognitive", "Productivity"],
-    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/mindmappr",
+    liveUrl: "https://t.me/googlieeyes_bot",
   },
   {
     name: "TheAltText",
@@ -54,7 +55,7 @@ const apps = [
     icon: Router,
     status: "Live",
     tags: ["Data", "Automation", "Productivity"],
-    liveUrl: "https://midnghtsapphire.github.io/universal-data-router/",
+    liveUrl: "http://24.199.90.253",
   },
   {
     name: "Project Face",
@@ -62,7 +63,7 @@ const apps = [
     icon: Sparkles,
     status: "Live",
     tags: ["AI", "Computer Vision", "Healthcare"],
-    liveUrl: "https://midnghtsapphire.github.io/project-face/",
+    liveUrl: "http://192.241.141.186",
   },
   {
     name: "Revvel Email Organizer",
@@ -84,25 +85,76 @@ const apps = [
     name: "Forensic Studio",
     description: "Advanced image analysis and AI-powered forensic reconstruction tool for batch processing and visual analysis.",
     icon: Search,
-    status: "In Development",
+    status: "Live",
     tags: ["AI", "Forensics", "Image Analysis"],
-    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/revvel-forensic-studio",
+    liveUrl: "http://164.90.148.7/forensicstudio/",
   },
   {
     name: "AI Benchmarking Tool",
     description: "Comprehensive benchmarking suite for evaluating and comparing AI model performance across standardized metrics.",
     icon: BarChart3,
-    status: "In Development",
+    status: "Live",
     tags: ["AI", "Analytics", "Research"],
-    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/ai-benchmarking-tool",
+    liveUrl: "http://198.211.98.52",
+  },
+];
+
+const affiliateLinks = [
+  {
+    name: "Make.com",
+    description: "Powerful no-code automation platform. Connect apps and automate workflows without writing a single line of code.",
+    icon: Zap,
+    tags: ["Automation", "No-Code", "Workflows"],
+    url: "https://www.make.com/en/register?pc=risingaloha",
+    cta: "Try Free",
   },
   {
-    name: "Affiliate Links",
-    description: "MCP server for managing and generating affiliate links across platforms, tracking performance and optimizing revenue.",
+    name: "GoHighLevel",
+    description: "All-in-one marketing and CRM platform for agencies. Funnels, email, SMS, and client management in one place.",
+    icon: BarChart3,
+    tags: ["CRM", "Marketing", "Agency"],
+    url: "https://www.gohighlevel.com/?fp_ref=audrey51",
+    cta: "Get Started",
+  },
+  {
+    name: "VideoGen",
+    description: "AI-powered video generation platform. Create professional marketing videos from text in minutes.",
+    icon: Sparkles,
+    tags: ["AI", "Video", "Marketing"],
+    url: "https://videogen.io/?fpr=audrey21",
+    cta: "Create Videos",
+  },
+  {
+    name: "Chime",
+    description: "Fee-free banking built for everyday people. No hidden fees, early direct deposit, and automatic savings.",
+    icon: DollarSign,
+    tags: ["Banking", "Finance", "No Fees"],
+    url: "https://www.chime.com/r/audreyevans44/?c=s",
+    cta: "Open Account",
+  },
+  {
+    name: "DigitalOcean",
+    description: "Developer-friendly cloud infrastructure. Deploy apps, databases, and Kubernetes clusters with ease.",
     icon: LinkIcon,
-    status: "In Development",
-    tags: ["MCP", "Affiliate", "Revenue"],
-    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/rvvel-affiliate-links-mcp",
+    tags: ["Cloud", "Hosting", "DevOps"],
+    url: "https://m.do.co/c/fe8240d60588",
+    cta: "Get $200 Credit",
+  },
+  {
+    name: "Monday.com",
+    description: "Work OS that powers teams to run projects and workflows with confidence. Visual, flexible, and easy to use.",
+    icon: Router,
+    tags: ["Project Management", "Teams", "Productivity"],
+    url: "https://try.monday.com/9828lfh0uct0",
+    cta: "Start Free Trial",
+  },
+  {
+    name: "Amazon",
+    description: "Shop millions of products with trusted reviews. Find everything from tech gear to home essentials.",
+    icon: Star,
+    tags: ["Shopping", "Tech", "Essentials"],
+    url: "https://www.amazon.com/?tag=meetaudreyeva-20",
+    cta: "Shop Now",
   },
 ];
 
@@ -281,6 +333,83 @@ export default function Portfolio() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Affiliate Partners Section */}
+          <div className="mt-20">
+            <div className="mb-10">
+              <p
+                className="font-medium text-sm tracking-widest uppercase mb-2"
+                style={{ color: "#15803d" }}
+              >
+                Partners &amp; Affiliates
+              </p>
+              <h3 className="font-serif text-2xl md:text-3xl text-warm-50 mb-3">
+                Recommended Tools &amp; Services
+              </h3>
+              <p className="text-warm-400 text-sm max-w-2xl">
+                Tools I personally use and recommend. Some links are affiliate links — using them supports this work at no extra cost to you.
+              </p>
+              <div className="gold-line w-16 mt-4" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {affiliateLinks.map((affiliate) => {
+                const Icon = affiliate.icon;
+                return (
+                  <a
+                    key={affiliate.name}
+                    href={affiliate.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass-panel p-6 text-left group hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg block"
+                    style={{ boxShadow: "0 4px 20px rgba(22, 101, 52, 0.05)" }}
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div
+                        className="w-10 h-10 rounded-lg flex items-center justify-center"
+                        style={{ backgroundColor: "rgba(22, 101, 52, 0.15)" }}
+                      >
+                        <Icon size={20} style={{ color: "#22c55e" }} aria-hidden="true" />
+                      </div>
+                      <ExternalLink
+                        size={16}
+                        className="text-warm-600 group-hover:text-forest-500 transition-colors"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <h3 className="text-warm-100 font-semibold text-lg mb-2">
+                      {affiliate.name}
+                    </h3>
+                    <p className="text-warm-400 text-sm leading-relaxed mb-4">
+                      {affiliate.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {affiliate.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-1 text-xs rounded"
+                          style={{
+                            color: "rgba(34, 197, 94, 0.8)",
+                            backgroundColor: "rgba(22, 101, 52, 0.12)",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <span
+                      className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full"
+                      style={{
+                        color: "#22c55e",
+                        backgroundColor: "rgba(22, 101, 52, 0.15)",
+                      }}
+                    >
+                      {affiliate.cta} →
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           {/* GitHub Link */}
