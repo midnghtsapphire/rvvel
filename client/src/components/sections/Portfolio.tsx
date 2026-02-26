@@ -2,7 +2,7 @@
  * Design: Earth & Canopy
  * Portfolio section — glass cards for each app in the ecosystem.
  * Forest green accents for tech/innovation. NO blue light.
- * Links: GitHub Pages for public repos; GitHub repo URLs for private repos.
+ * Links: Live deployed apps on droplet; GitHub repo URLs for apps not yet live.
  */
 import { useInView } from "@/hooks/useInView";
 import { 
@@ -17,7 +17,9 @@ import {
   Brain,
   Eye,
   Leaf,
-  Zap
+  Zap,
+  Star,
+  Search
 } from "lucide-react";
 
 const apps = [
@@ -27,7 +29,7 @@ const apps = [
     icon: Dog,
     status: "Live",
     tags: ["Animal Care", "Management", "Service"],
-    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/Pawsitting",
+    liveUrl: "http://164.90.148.7/pawsitting/",
     dividerBefore: true,
   },
   {
@@ -44,7 +46,7 @@ const apps = [
     icon: FileText,
     status: "Live",
     tags: ["Accessibility", "AI", "Web Tools"],
-    liveUrl: "https://midnghtsapphire.github.io/thealttext/",
+    liveUrl: "http://164.90.148.7/thealttext/",
   },
   {
     name: "Universal Data Router",
@@ -69,6 +71,22 @@ const apps = [
     status: "Live",
     tags: ["AI", "Email", "Productivity"],
     liveUrl: "https://midnghtsapphire.github.io/revvel-email-organizer/",
+  },
+  {
+    name: "Reese Reviews",
+    description: "Review aggregation and management platform for tracking and displaying customer reviews across multiple services.",
+    icon: Star,
+    status: "Live",
+    tags: ["Reviews", "Management", "Service"],
+    liveUrl: "http://164.90.148.7/reesereviews/",
+  },
+  {
+    name: "Forensic Studio",
+    description: "Advanced image analysis and AI-powered forensic reconstruction tool for batch processing and visual analysis.",
+    icon: Search,
+    status: "In Development",
+    tags: ["AI", "Forensics", "Image Analysis"],
+    liveUrl: "https://github.com/MIDNGHTSAPPHIRE/revvel-forensic-studio",
   },
   {
     name: "AI Benchmarking Tool",
