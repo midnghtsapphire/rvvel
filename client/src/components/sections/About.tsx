@@ -5,7 +5,7 @@
  */
 import { useInView } from "@/hooks/useInView";
 
-const SECONDARY_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032705003/NLYAnKrlUHPmCagF.jpeg";
+const SECONDARY_PHOTO = "/audrey-story.jpg";
 
 const highlights = [
   { label: "Years in IT", value: "30+" },
@@ -57,7 +57,7 @@ export default function About() {
               <div className="relative w-56 h-72 md:w-64 md:h-80 rounded-xl overflow-hidden glass-panel shadow-xl" style={{ boxShadow: "0 10px 40px rgba(22, 101, 52, 0.1)" }}>
                 <img
                   src={SECONDARY_PHOTO}
-                  alt="Audrey Evans in a blue dress against a mountain sunset backdrop — professional portrait"
+                  alt="Audrey Evans — professional portrait outdoors"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
