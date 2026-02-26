@@ -19,7 +19,8 @@ import {
   Zap,
   Star,
   Search,
-  DollarSign
+  DollarSign,
+  Mail
 } from "lucide-react";
 
 const apps = [
@@ -111,6 +112,14 @@ const apps = [
     status: "Live",
     tags: ["AI", "Analytics", "Research"],
     liveUrl: "http://198.211.98.52",
+  },
+  {
+    name: "Revvel Email Organizer",
+    description: "AI-powered email categorization system that brings order to chaotic inboxes with smart filtering and priority management.",
+    icon: Mail,
+    status: "Live",
+    tags: ["AI", "Email", "Productivity"],
+    liveUrl: "https://midnghtsapphire.github.io/revvel-email-organizer/",
   },
 ];
 
