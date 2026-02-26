@@ -70,7 +70,7 @@ const apps = [
     icon: Brain,
     status: "Live",
     tags: ["AI", "Cognitive", "Productivity"],
-    liveUrl: "https://t.me/googlieeyes_bot",
+    liveUrl: "http://164.90.148.7/mindmappr/",
   },
   {
     name: "DataScope",
