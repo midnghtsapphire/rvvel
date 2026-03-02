@@ -6,7 +6,7 @@
 import { useInView } from "@/hooks/useInView";
 import { Heart, Shield, Users, HandHeart } from "lucide-react";
 
-const PRIMARY_PHOTO = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032705003/GrSpBEVXdxZidAEe.png";
+const PRIMARY_PHOTO = "/images/advocacy-photo.png";
 
 const pillars = [
   {
