@@ -47,7 +47,7 @@ const apps = [
     icon: FileText,
     status: "Live",
     tags: ["Accessibility", "AI", "Web Tools"],
-    liveUrl: "https://alttext.com",
+    liveUrl: "https://thealttext.com",
   },
   {
     name: "Reese Reviews",

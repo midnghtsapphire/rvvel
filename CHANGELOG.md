@@ -8,6 +8,21 @@ All notable changes to the meetaudreyevans.com site are documented here.
 
 ---
 
+## 2026-03-14
+
+### Updated — PawfectPetsitt.ing and TheAltText now live
+
+**Changes made to `client/src/components/sections/Portfolio.tsx`:**
+
+| App | Change | Details |
+|---|---|---|
+| PawSitting | Renamed to **PawfectPetsitt.ing** | Updated `liveUrl` from `#` to `https://pawfectpetsitt.ing`; status changed from "Migrating — Coming Soon" to "Live" |
+| TheAltText | Link updated | Updated `liveUrl` from `#` to `https://thealttext.com`; status changed from "Migrating — Coming Soon" to "Live" |
+
+Also updated all references to "PawSitting" in `CHANGELOG.md` to "PawfectPetsitt.ing".
+
+---
+
 ## 2026-02-25
 
 ### Fixed — Portfolio app link 404 errors
@@ -18,20 +33,20 @@ All notable changes to the meetaudreyevans.com site are documented here.
 
 | App | Old URL | New URL | Reason |
 |---|---|---|---|
-| PawSitting | `https://midnghtsapphire.github.io/Pawsitting/` (404) | `https://github.com/MIDNGHTSAPPHIRE/Pawsitting` | Private repo — no GitHub Pages |
+| PawfectPetsitt.ing | `https://pawfectpetsitt.ing` (Live) | `https://github.com/MIDNGHTSAPPHIRE/Pawsitting` | Live domain — renamed from PawSitting |
 | MindMappr | `https://midnghtsapphire.github.io/mindmappr/` (404) | `https://github.com/MIDNGHTSAPPHIRE/mindmappr` | Private repo — no GitHub Pages |
 | AI Benchmarking Tool | `https://midnghtsapphire.github.io/ai-benchmarking-tool/` (404) | `https://github.com/MIDNGHTSAPPHIRE/ai-benchmarking-tool` | Private repo — no GitHub Pages; status updated to "In Development" |
 | Affiliate Links | `https://github.com/MIDNGHTSAPPHIRE/rvvel-affiliate-links-mcp` (404 for public) | `https://github.com/MIDNGHTSAPPHIRE/rvvel-affiliate-links-mcp` | Private repo; link kept, status confirmed "In Development" |
 
 **Confirmed working (no change needed):**
-- TheAltText → `https://midnghtsapphire.github.io/thealttext/` ✓
+- TheAltText → `https://thealttext.com` ✓ (updated to live domain)
 - Universal Data Router → `https://midnghtsapphire.github.io/universal-data-router/` ✓
 - Project Face → `https://midnghtsapphire.github.io/project-face/` ✓
 - Revvel Email Organizer → `https://midnghtsapphire.github.io/revvel-email-organizer/` ✓
 
-### Added — Visual divider above PawSitting card
+### Added — Visual divider above PawfectPetsitt.ing card
 
-Added a subtle `col-span-full` horizontal rule (`<hr>`) above the PawSitting card in the portfolio grid. The divider uses `rgba(169, 149, 128, 0.18)` — a warm, low-contrast tone consistent with the Earth & Canopy design system.
+Added a subtle `col-span-full` horizontal rule (`<hr>`) above the PawfectPetsitt.ing card in the portfolio grid. The divider uses `rgba(169, 149, 128, 0.18)` — a warm, low-contrast tone consistent with the Earth & Canopy design system.
 
 ### Fixed — Apple Music link in Music section
 
