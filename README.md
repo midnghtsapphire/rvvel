@@ -52,3 +52,12 @@ Static output in `dist/public/` — deploy to Vercel, Netlify, or GitHub Pages.
 ## License
 
 All rights reserved. © Audrey Evans / GlowStar Labs.
+
+---
+
+## Test
+
+| Feature | Status |
+|---------|--------|
+| Feature | ✅ Ready |
+
